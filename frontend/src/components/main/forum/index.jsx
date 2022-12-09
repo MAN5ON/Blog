@@ -17,9 +17,9 @@ export const Forum = () => {
       <div className={s.chatMessage}>
         <div className={s.username}>Username</div>
         <div className={s.message}>Message</div>
-        <div className={s.likesField}>
-          <div className={s.likesCounter}>14</div>
-          <button className={s.likes}>♡❤️</button>
+        <div className={s.statMessage}>
+          <div className={s.dateMessage}>10.12.2022</div>
+          <button className={s.likes}>14 ♡❤️</button>
         </div>
       </div>
     </main>
