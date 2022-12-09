@@ -85,14 +85,16 @@
   align-self: flex-end;
 }
 
-.likesField button {
+.likes {
   width: 40px;
   height: 40px;
   border-radius: 30%;
 
   font-size: 25px;
+  color: rgb(255, 255, 255);
   background-color: rgb(20, 20, 20);
 
+  cursor: pointer;
   border: none;
   outline: none;
 }
