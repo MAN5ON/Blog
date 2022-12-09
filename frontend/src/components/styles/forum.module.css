@@ -2,32 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
   width: 45%;
-  padding: 15px;
+
+  margin: auto;
   margin-top: 50px;
+  padding: 15px;
+
   border-radius: 25px;
   background-color: rgb(20, 20, 20);
 }
 
 .inputForm textarea {
   width: 100%;
-  border: none;
-  background-color: rgb(20, 20, 20);
-  font-size: 16px;
   height: 100px;
+  border: none;
+
+  font-size: 16px;
+  background-color: rgb(20, 20, 20);
+
   resize: none;
   outline: none;
 }
 
 .inputForm button {
-  border: none;
   align-self: flex-end;
-  border-radius: 15px;
   padding: 10px 25px 10px 25px;
+  border-radius: 15px;
+  border: none;
+
   font-size: 16px;
-  background-color: rgb(30, 30, 30);
   color: rgb(255, 255, 255);
+  background-color: rgb(30, 30, 30);
+
   cursor: pointer;
   outline: none;
 }
@@ -40,35 +46,39 @@
   display: flex;
   flex-direction: column;
   align-self: center;
+  width: 45%;
 
   margin: 15px auto;
   padding: 15px;
-  width: 45%;
   border-radius: 15px;
+
   color: rgb(255, 255, 255);
   background-color: rgb(20, 20, 20);
 }
 
 .username {
-  font-size: 20px;
   align-self: flex-start;
-  color: rgb(255, 255, 255);
   margin: 0 5px 5px 5px;
+
+  font-size: 20px;
   font-weight: bold;
+  color: rgb(255, 255, 255);
 }
 
 .message {
-  font-size: 16px;
   align-self: flex-start;
-  color: rgb(200, 200, 200);
   margin: 0 5px 5px 5px;
+
+  font-size: 16px;
+  color: rgb(200, 200, 200);
 }
 
 .likesField {
   display: flex;
   align-self: flex-end;
-  font-weight: bold;
+
   font-size: 20px;
+  font-weight: bold;
 }
 
 .likesCounter {
@@ -79,8 +89,10 @@
   width: 40px;
   height: 40px;
   border-radius: 30%;
+
   font-size: 25px;
+  background-color: rgb(20, 20, 20);
+
   border: none;
   outline: none;
-  background-color: rgb(20, 20, 20)
 }

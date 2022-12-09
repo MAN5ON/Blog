@@ -1,6 +1,94 @@
 .profilePage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px 15px 25px 25px;
+  border-radius: 25px;
+
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+}
+
+.userBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.userLogin {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.settingsButton {
+  align-self: flex-start;
+  border-radius: 25%;
+
+  font-size: 20px;
+
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.settingsButton:active {
+  font-size: 25px;
+}
+
+.userName {
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.userPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 15px;
+
+  font-size: 16px;
+  background-color: rgb(20, 20, 20);
+}
+
+.editPage {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.editPage textarea {
+  width: 100%;
+  height: 250px;
+  border: none;
+
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+
+  resize: none;
+  outline: none;
+}
+
+.saveButton {
+  margin: auto;
+  padding: 15px 25px;
+  border-radius: 10px;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.saveButton:active {
+  background-color: rgb(150, 150, 150);
 }
