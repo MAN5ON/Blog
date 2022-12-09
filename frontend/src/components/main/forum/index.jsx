@@ -19,7 +19,7 @@ export const Forum = () => {
         <div className={s.message}>Message</div>
         <div className={s.likesField}>
           <div className={s.likesCounter}>14</div>
-          <div className={s.likes}><button>💟💜</button></div>
+          <button className={s.likes}>♡❤️</button>
         </div>
       </div>
     </main>

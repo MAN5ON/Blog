@@ -2,6 +2,133 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 60%;
+  margin: 15px auto;
+  padding: 25px;
 
   color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+}
+
+.author {
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.blogAuthor:hover {
+  text-decoration: underline;
+}
+
+.blogName {
+  padding-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.blogPage img {
+  width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+}
+
+.blogTags {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+
+  font-weight: bold;
+}
+
+.blogTagItem {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+
+  background-color: rgb(30, 30, 30);
+  cursor: pointer;
+}
+
+.blogTagItem:hover {
+  text-decoration: underline;
+}
+
+.footerBlog {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  justify-content: space-around;
+
+  font-weight: lighter;
+}
+
+.commentItem {
+  padding: 5px 0px 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+
+  background-color: rgb(30, 30, 30);
+}
+
+.authorComment {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.authorComment:hover {
+  text-decoration: underline;
+}
+
+.comment {
+  padding: 5px;
+  margin: 5px;
+
+  font-size: 18px;
+}
+
+.statComment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+
+  font-weight: lighter;
+  
+}
+
+.likesComment {
+
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(30, 30, 30);
+  
+  border: none;
+  cursor: pointer;
+}
+
+.leaveComment textarea {
+  padding: 5px;
+  margin: 10px;
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+
+  resize: none;
+  border: none;
+}
+
+.sendButton {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+
+  font-size: 25px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.sendButton:active {
+  background-color: rgb(30, 30, 30);
 }
