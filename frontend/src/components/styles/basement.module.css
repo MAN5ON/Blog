@@ -1,39 +1,38 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  margin-top: 150px;
+  padding: 40px 0 40px 0;
 
-    height: 100px;
-    margin-top: 150px;
-    padding: 40px 0 40px 0;
-    color: rgb(255, 255, 255);  
-    background-color: rgb(20,20,20);   
-
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
 }
 
 .footer p {
-    margin: 0;
+  margin: 0;
 }
 
 .basement {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .basement a {
-    color: rgb(175, 175, 175);
-    text-decoration: none;
-    font-size: 18px;
+  font-size: 18px;
+  color: rgb(175, 175, 175);
+
+  text-decoration: none;
 }
 
 .basement a:hover {
-    color: rgb(215, 215, 215);
-    text-decoration: underline;
-    
+  color: rgb(215, 215, 215);
+
+  text-decoration: underline;
 }
 
-
 .gmail {
-    align-self: flex-start;
-    margin: 0 0 0 25em;
+  align-self: flex-start;
+  margin: 0 0 0 25em;
 }
