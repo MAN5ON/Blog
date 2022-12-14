@@ -1,6 +1,39 @@
+import { useState } from "react";
 import s from "../../styles/forum.module.css";
 
 export const Forum = () => {
+  const [forum, setForum] = useState([]);
+  const [message, setMessage] = useState("");
+  const addMessage = () => {
+    if (message.trim().length) {
+      setForum([
+        ...forum,
+        {
+          id: new Date().toISOString(),
+          message,
+          likesCount: 0,
+          likeStatus: false,
+          dateMessage: new Date().toLocaleString(),
+        },
+      ]);
+      setMessage("");
+    }
+  };
+  const deleteMessage = (messageID) => {
+    setForum(forum.filter((m) => m.id !== messageID));
+  };
+  const toggleLikeStatus = (messageID) => {
+    setForum(
+      forum.map((m) => {
+        if (m.id !== messageID) {
+          return m;
+        } else {
+          return { ...m, likeStatus: !m.likeStatus };
+        }
+      })
+    );
+  };
+
   return (
     <main className={s.forumPage}>
       <div className={s.inputForm}>
@@ -8,20 +41,44 @@ export const Forum = () => {
         <textarea
           className={s.message}
           placeholder="Text message"
+          value={message}
+          maxLength={100}
           onChange={(e) => {
-            console.log(e.target.value);
+            setMessage(e.target.value);
           }}
         />
-        <button className={s.sendButton}>Send Message</button>
+        <button className={s.sendButton} onClick={addMessage}>
+          Send Message
+        </button>
       </div>
-      <div className={s.chatMessage}>
-        <div className={s.username}>Username</div>
-        <div className={s.message}>Message</div>
-        <div className={s.statMessage}>
-          <div className={s.dateMessage}>10.12.2022</div>
-          <button className={s.likes}>14 ♡❤️</button>
-        </div>
-      </div>
+      {forum
+        .slice(0)
+        .reverse()
+        .map((forum) => (
+          <div className={s.chatMessage}>
+            <div className={s.headMessage}>
+              <div className={s.username}>{forum.id}</div>
+              <button
+                className={s.deleteMessage}
+                onClick={() => deleteMessage(forum.id)}
+              >
+                ❌
+              </button>
+            </div>
+
+            <div className={s.message}>{forum.message}</div>
+
+            <div className={s.basementMessage}>
+              <div className={s.dateMessage}>{forum.dateMessage}</div>
+              <button
+                className={s.likes}
+                onClick={() => toggleLikeStatus(forum.id)}
+              >
+                {forum.likesCount} {forum.likeStatus === true ? "❤️" : "🖤"}
+              </button>
+            </div>
+          </div>
+        ))}
     </main>
   );
 };
