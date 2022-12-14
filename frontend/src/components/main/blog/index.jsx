@@ -3,7 +3,7 @@ import s from "../../styles/blog.module.css";
 export const Blog = () => {
   return (
     <div className={s.blogPage}>
-      <div classname={s.blogItem}>
+      <div className={s.blogItem}>
         <div className={s.blogAuthor}>Renat Bikmukhamedov</div>
         <div className={s.blogName}>Blog #1</div>
         <img
