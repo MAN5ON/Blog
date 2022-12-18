@@ -2,11 +2,11 @@ import { useState } from "react";
 import s from "../../styles/forum.module.css";
 
 export const Forum = () => {
-  const [forum, setForum] = useState([]);
+  const [forum, viewForum] = useState([]);
   const [message, setMessage] = useState("");
   const addMessage = () => {
     if (message.trim().length) {
-      setForum([
+      viewForum([
         ...forum,
         {
           id: new Date().toISOString(),
@@ -20,15 +20,15 @@ export const Forum = () => {
     }
   };
   const deleteMessage = (messageID) => {
-    setForum(forum.filter((m) => m.id !== messageID));
+    viewForum(forum.filter((m) => m.id !== messageID));
   };
   const toggleLikeStatus = (messageID) => {
-    setForum(
+    viewForum(
       forum.map((m) => {
         if (m.id !== messageID) {
           return m;
         } else {
-          return { ...m, likeStatus: !m.likeStatus };
+          return { ...m, likeStatus: !m.likeStatus}   
         }
       })
     );

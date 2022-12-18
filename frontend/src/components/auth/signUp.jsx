@@ -1,6 +1,6 @@
 import s from "../styles/auth.module.css";
 
-export const SignUp = () => {
+export const SignUp = (showLogin) => {
   return (
     <div className={s.authPage}>
       <div className={s.inputs}>
