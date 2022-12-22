@@ -38,9 +38,9 @@ export const Blog = () => {
 
   return (
     <div className={s.blogPage}>
-      <div className={s.blogItem}>
-        <div className={s.blogAuthor}>Renat Bikmukhamedov</div>
-        <div className={s.blogName}>Blog #1</div>
+      <div className={s.itemBlog}>
+        <div className={s.authorBlog}>Renat Bikmukhamedov</div>
+        <div className={s.nameBlog}>Blog #1</div>
         <img
           className={s.blogPic}
           src="https://images.unsplash.com/photo-1666214280165-20e3d73d70bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
@@ -76,7 +76,7 @@ export const Blog = () => {
                 </button>
               </div>
 
-              <div className={s.TextComment}>{comments.comment}</div>
+              <div className={s.textComment}>{comments.comment}</div>
 
               <div className={s.basementComment}>
                 <div className={s.dateComment}>{comments.dateComment}</div>
