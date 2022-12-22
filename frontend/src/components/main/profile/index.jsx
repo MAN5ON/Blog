@@ -5,13 +5,16 @@ import { UserPage } from "./userPage";
 
 export const Profile = () => {
   const [editPage, showEditPage] = useState(false);
+  const [pageText, changePageText] = useState('');
+  const props = {pageText, changePageText, showEditPage}
+  
 
   return (
     <div className={s.profilePage}>
       <div className={s.userLogin}>MAN5ON</div>
       <div className={s.userName}>Renat Bikmukhamedov</div>
 
-      { editPage ? <EditPage  /> : <UserPage />}
+      { editPage ? <EditPage  {...props}/> : <UserPage {...props}/>}
 
       <div className={s.regDate}>Date of registration: 09.12.2022</div>
     </div>
