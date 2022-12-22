@@ -42,7 +42,8 @@ export const Forum = () => {
           className={s.message}
           placeholder="Text message"
           value={message}
-          maxLength={100}
+          wrap="white-space"
+          maxLength={300}
           onChange={(e) => {
             setMessage(e.target.value);
           }}

@@ -10,16 +10,16 @@
   background-color: rgb(20, 20, 20);
 }
 
-.author {
+.authorBlog {
   font-weight: lighter;
   cursor: pointer;
 }
 
-.blogAuthor:hover {
+.authorBlog:hover {
   text-decoration: underline;
 }
 
-.blogName {
+.nameBlog {
   padding-bottom: 10px;
   font-size: 25px;
   font-weight: bold;
@@ -78,6 +78,16 @@
   
   font-size: 16px;
   font-weight: lighter;
+}
+
+.textComment {
+  display: block;
+  width: 100%;
+  align-self: flex-start;
+  margin: 0 5px 5px 5px;
+
+  white-space: pre;
+  word-wrap: break-word;
 }
 
 .username:hover {
