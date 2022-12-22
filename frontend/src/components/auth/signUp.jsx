@@ -1,6 +1,6 @@
 import s from "../styles/auth.module.css";
 
-export const SignUp = (showLogin) => {
+export const SignUp = ({ showLogin }) => {
   return (
     <div className={s.authPage}>
       <div className={s.inputs}>
@@ -12,7 +12,7 @@ export const SignUp = (showLogin) => {
         <input type="password" placeholder="Confirm Password" />
       </div>
       <button className={s.MainButton}>SIGN UP</button>
-      <button className={s.SecondButton}>Log In</button>
+      <button className={s.SecondButton} onClick={()=>showLogin(true)}>Log In</button>
     </div>
   );
 };

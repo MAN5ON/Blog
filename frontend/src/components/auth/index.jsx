@@ -5,5 +5,8 @@ import { SignUp } from "./signUp";
 export const Auth = () => {
   const [login, showLogin] = useState(true);
 
-  return login ? <LogIn /> : <SignUp />;
+  const props = {showLogin}
+
+
+  return login ? <LogIn {...props}/> : <SignUp {...props}/>;
 };
