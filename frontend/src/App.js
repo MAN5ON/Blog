@@ -19,7 +19,7 @@ function App() {
           <Route path="/forum" element={<Forum />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Auth />} />
-        </Routes>
+         </Routes>
       </div>
       <Basement />
     </div>

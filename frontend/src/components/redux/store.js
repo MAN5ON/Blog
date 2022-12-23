@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { forumReducer } from './forumSlice'
 
-const store =  configureStore({
-    reducer: {}
+export const store =  configureStore({
+    reducer: {
+        forum: forumReducer
+    }
 })
-
-export default store
