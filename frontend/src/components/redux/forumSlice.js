@@ -10,22 +10,23 @@ const forumSlice = createSlice({
             state.forumMessages.push({
                 id: new Date().toISOString(),
                 text: action.payload.text,
-                likesCount: 0,
-                likeStatus: false,
-                date : new Date().toLocaleString(),
+                updateStatus: false,
+                date: new Date().toLocaleString(),
             })
         },
         deleteMessage(state, action) {
-            state.forumMessages = state.forumMessages.filter((m) => m.id !== action.payload.id)
+            state.forumMessages = state.forumMessages.filter(m => m.id !== action.payload.id)
         },
-        toggleLikeStatus(state, action) {
-            const toggledLike = state.forumMessages.find(m => m.id === action.payload.id)
-            toggledLike.likeStatus = !toggledLike.likeStatus
-        },
+        updateMessage(state, action) {
+            const updateItem = state.forumMessages = state.forumMessages.find(m => m.id !== action.payload.id)
+            updateItem.updateStatus = !updateItem.updateStatus
+            updateItem.message = action.payload.text
+
+        }
     }
 });
 
 const { actions, reducer } = forumSlice
 
-export const { addMessage, deleteMessage, toggleLikeStatus } = actions;
+export const { addMessage, deleteMessage, updateMessage } = actions;
 export const forumReducer = reducer
