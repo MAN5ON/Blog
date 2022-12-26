@@ -2,6 +2,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.newBlogButton {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  margin-top: 25px;
+  padding: 10px 25px 10px 25px;
+  border-radius: 15px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(20, 20, 20);
+  background-color: rgb(255, 255, 255);
+  box-shadow:3px 3px 3px black;
+
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.newBlogButton:active {
+  background-color: rgb(50, 50, 50);
+}
+
+.itemBlog {
   width: 60%;
   margin: 15px auto;
   padding: 25px;
@@ -75,7 +101,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  
+
   font-size: 16px;
   font-weight: lighter;
 }
@@ -98,7 +124,7 @@
   background: none;
   border: none;
   outline: none;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .comment {
@@ -115,14 +141,13 @@
   margin-top: 5px;
 
   font-weight: lighter;
-  
 }
 
 .likes {
   font-size: 16px;
   color: rgb(255, 255, 255);
   background-color: rgb(30, 30, 30);
-  
+
   border: none;
   cursor: pointer;
 }
