@@ -15,7 +15,6 @@ export const Forum = () => {
 
       {forum
         .slice(0)
-        .reverse()
         .map((message) => (
           <MessageItem key={message.id} {...message} />
         ))}

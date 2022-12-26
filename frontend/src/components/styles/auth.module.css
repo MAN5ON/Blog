@@ -63,11 +63,8 @@
   border: none;
 }
 
-.MainButton:hover {
-  color: rgb(20, 20, 20);
+.MainButton:active {
   background-color: rgb(50, 50, 50);
-
-  text-decoration: none;
 }
 
 .SecondButton {
@@ -84,7 +81,7 @@
   border: none;
 }
 
-.SecondButton:hover {
+.SecondButton:active {
   color: rgb(20, 20, 20);
   background-color: rgb(200, 200, 200);
 

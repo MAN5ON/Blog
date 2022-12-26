@@ -1,0 +1,55 @@
+.newPost {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  width: 75%;
+}
+
+.newPost input,
+.newPost textarea {
+  margin: 5px 0 5px 0;
+  padding: 10px;
+
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  background-color: rgb(20, 20, 20);
+  color: rgb(255, 255, 255);
+
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+.newPost textarea {
+  height: 250px;
+}
+
+.newPost button {
+  margin: 5px auto;
+  padding: 5px 10px;
+  border-radius: 15px;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(20, 20, 20);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 3px 3px black;
+
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.newPost button:active {
+  background-color: rgb(50, 50, 50);
+}
+
+.addButtons {
+  display: flex;
+  align-self: center;
+}
+
+.addButtons button {
+  margin: 0 5px auto;
+}
