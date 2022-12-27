@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import s from "../../styles/profile.module.css";
+import s from "../../styles/profile/profile.module.css";
 import { EditPage } from "./editPage";
 import { UserPage } from "./userPage";
 

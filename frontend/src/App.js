@@ -8,7 +8,7 @@ import { NewPostItem } from "./components/main/blog/newPostItem";
 import { Forum } from './components/main/forum/';
 import { Profile } from './components/main/profile/';
 import { Auth } from "./components/auth";
-import { Basement } from './components/header-basement/basement';
+//import { Basement } from './components/header-basement/basement';
 
 
 
@@ -25,7 +25,7 @@ function App() {
           <Route path="/login" element={<Auth />} />
          </Routes>
       </div>
-      <Basement />
+      {/* <Basement /> */}
     </div>
   );
 }

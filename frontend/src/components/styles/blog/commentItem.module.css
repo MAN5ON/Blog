@@ -1,0 +1,62 @@
+.commentItem {
+  padding: 5px 0px 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+
+  background-color: rgb(30, 30, 30);
+}
+
+.headComment {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.textComment {
+  display: block;
+  width: 100%;
+  align-self: flex-start;
+  margin: 0 5px 5px 5px;
+
+  white-space: pre;
+  word-wrap: break-word;
+}
+
+.username:hover {
+  text-decoration: underline;
+}
+
+.deleteComment {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.comment {
+  padding: 5px;
+  margin: 5px;
+
+  font-size: 18px;
+}
+
+.basementComment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+
+  font-weight: lighter;
+}
+
+.likes {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(30, 30, 30);
+
+  border: none;
+  cursor: pointer;
+}

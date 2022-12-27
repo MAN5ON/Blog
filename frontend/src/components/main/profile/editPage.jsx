@@ -1,4 +1,4 @@
-import s from "../../styles/profile.module.css";
+import s from "../../styles/profile/profile.module.css";
 
 export const EditPage = ({ pageText, changePageText, showEditPage }) => {
   return (

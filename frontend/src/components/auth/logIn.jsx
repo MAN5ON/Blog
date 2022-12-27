@@ -1,5 +1,5 @@
-import { TemplateButton } from "../resources/button";
-import s from "../styles/auth.module.css";
+import { TemplateButton } from "../templates/button";
+import s from "../styles/auth/auth.module.css";
 
 export const LogIn = ({ showLogin }) => {
   return (

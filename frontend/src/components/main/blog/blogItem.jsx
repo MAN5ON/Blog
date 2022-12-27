@@ -1,6 +1,6 @@
 import React from "react";
 
-import s from "../../styles/blog.module.css";
+import s from "../../styles/blog/blog.module.css";
 
 export const BlogItem = () => {
   return (

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { addMessage } from "../../redux/forumSlice";
-import { TemplateButton } from "../../resources/button";
-import s from "../../styles/forum.module.css";
+import { TemplateButton } from "../../templates/button";
+import s from "../../styles/forum/inputForm.module.css";
 
 export const NewMessageForm = () => {
   const [text, setText] = useState("");
@@ -18,8 +18,6 @@ export const NewMessageForm = () => {
 
   return (
     <div className={s.inputForm}>
-      <div className={s.username}>Guest3426345</div>
-
       <textarea
         className={s.message}
         placeholder="Text message"
