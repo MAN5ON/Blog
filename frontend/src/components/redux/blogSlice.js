@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const blogSlice = createSlice({
     name: 'blog',
     initialState: {
-        blogPosts: [{
-            blogPage:[],
-            blogComments:[]
-        }],
+        blogPosts: [
+            // blogPage:[],
+            // blogComments:[]
+        ],
     },
     reducers: {
         addPost(state, action) {
@@ -29,7 +29,7 @@ const blogSlice = createSlice({
         },
         commentLikeStatus(state, action) {
 
-         },
+        },
         updateComment(state, action) { },
         deleteComment(state, action) { },
     }

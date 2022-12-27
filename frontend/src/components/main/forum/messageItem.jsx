@@ -9,12 +9,12 @@ export const MessageItem = ({ id, text, date, updateStatus }) => {
   const dispatch = useDispatch();
   const updateMessageInForum = () => {
     if ((updateStatus = true)) {
-      console.log(typeof(message))
+      console.log(typeof message);
       if (message.trim().length) {
         dispatch(updateMessage({ id, message }));
       }
     } else {
-      dispatch(updateMessageStatus({ id }))
+      dispatch(updateMessageStatus({ id }));
     }
   };
 
@@ -43,10 +43,7 @@ export const MessageItem = ({ id, text, date, updateStatus }) => {
 
       <div className={s.basementMessage}>
         <div className={s.dateMessage}>{date}</div>
-        <button
-          className={s.likes}
-          onClick={updateMessageInForum}
-        >
+        <button className={s.likes} onClick={updateMessageInForum}>
           🖊️
         </button>
       </div>

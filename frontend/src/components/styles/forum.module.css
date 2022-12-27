@@ -26,20 +26,6 @@
 
 .inputForm button {
   align-self: flex-end;
-  padding: 10px 25px 10px 25px;
-  border-radius: 15px;
-  border: none;
-
-  font-size: 16px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(30, 30, 30);
-
-  cursor: pointer;
-  outline: none;
-}
-
-.inputForm button:active {
-  background-color: rgb(10, 10, 10);
 }
 
 .chatMessage {
@@ -87,7 +73,6 @@
   justify-content: space-between;
   padding-top: 10px;
 
-
   font-size: 14px;
   font-weight: lighter;
 }
@@ -96,7 +81,7 @@
   background: none;
   border: none;
   outline: none;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .likes {

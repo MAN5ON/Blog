@@ -4,27 +4,10 @@
   align-items: center;
 }
 
-.newBlogButton {
+.newPost button {
   position: absolute;
-  top: 60px;
-  left: 20px;
-  margin-top: 25px;
-  padding: 10px 25px 10px 25px;
-  border-radius: 15px;
-
-  font-size: 20px;
-  font-weight: bold;
-  color: rgb(20, 20, 20);
-  background-color: rgb(255, 255, 255);
-  box-shadow:3px 3px 3px black;
-
-  cursor: pointer;
-  outline: none;
-  border: none;
-}
-
-.newBlogButton:active {
-  background-color: rgb(50, 50, 50);
+  top: 85px;
+  left: 2%;
 }
 
 .itemBlog {

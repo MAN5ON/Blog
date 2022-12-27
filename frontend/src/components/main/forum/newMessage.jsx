@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { addMessage } from "../../redux/forumSlice";
+import { TemplateButton } from "../../resources/button";
 import s from "../../styles/forum.module.css";
 
 export const NewMessageForm = () => {
-    const [text, setText] = useState("")
-    const dispatch = useDispatch()
+  const [text, setText] = useState("");
+  const dispatch = useDispatch();
 
-    const addMessageToForum = () => {
-        if (text.trim().length) {
-          dispatch(addMessage({ text }));
-          setText("");
-        }
-      };
+  const addMessageToForum = () => {
+    if (text.trim().length) {
+      dispatch(addMessage({ text }));
+      setText("");
+    }
+  };
 
   return (
     <div className={s.inputForm}>
@@ -29,10 +30,7 @@ export const NewMessageForm = () => {
           setText(e.target.value);
         }}
       />
-
-      <button className={s.sendButton} onClick={addMessageToForum}>
-        Send Message
-      </button>
+      <TemplateButton text="SEND" click={addMessageToForum} />
     </div>
   );
 };
