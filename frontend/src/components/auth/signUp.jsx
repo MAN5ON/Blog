@@ -1,3 +1,4 @@
+import { TemplateButton } from "../resources/button";
 import s from "../styles/auth.module.css";
 
 export const SignUp = ({ showLogin }) => {
@@ -11,7 +12,7 @@ export const SignUp = ({ showLogin }) => {
         <input type="password" placeholder="Password" />
         <input type="password" placeholder="Confirm Password" />
       </div>
-      <button className={s.MainButton}>SIGN UP</button>
+      <TemplateButton text='SIGN UP'/>
       <button className={s.SecondButton} onClick={()=>showLogin(true)}>Log In</button>
     </div>
   );

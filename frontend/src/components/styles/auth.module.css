@@ -48,25 +48,6 @@
   text-decoration: underline;
 } */
 
-.MainButton {
-  margin-top: 25px;
-  padding: 10px 25px 10px 25px;
-  border-radius: 15px;
-
-  font-size: 20px;
-  font-weight: bold;
-  color: rgb(20, 20, 20);
-  background-color: rgb(255, 255, 255);
-
-  cursor: pointer;
-  outline: none;
-  border: none;
-}
-
-.MainButton:active {
-  background-color: rgb(50, 50, 50);
-}
-
 .SecondButton {
   margin: 25px 0 25px;
   padding: 10px 25px 10px 25px;

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addComment } from "../../redux/blogSlice";
-
+import { TemplateButton } from "../../resources/button";
 import s from "../../styles/blog.module.css";
 
 export const InputComment = () => {
@@ -17,9 +15,7 @@ export const InputComment = () => {
           setComment(e.target.value);
         }}
       />
-      <button className={s.sendButton} onClick={useDispatch(addComment(comment))}>
-        ✍️
-      </button>
+      <TemplateButton text="✍️" />
     </div>
   );
 };
