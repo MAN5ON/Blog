@@ -1,6 +1,6 @@
 import React from "react";
-import { TemplateButton } from "../../resources/button";
-import s from "../../styles/newPost.module.css";
+import { TemplateButton } from "../../templates/button";
+import s from "../../styles/blog/newPost.module.css";
 
 export const NewPostItem = () => {
   return (

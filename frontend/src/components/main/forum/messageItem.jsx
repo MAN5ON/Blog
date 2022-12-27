@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import s from "../../styles/forum.module.css";
 import { useDispatch } from "react-redux";
+
 import { deleteMessage, updateMessageStatus } from "../../redux/forumSlice";
+import s from "../../styles/forum/forum.module.css";
 
 export const MessageItem = ({ id, text, date, updateStatus }) => {
   const [message, updateMessage] = useState(`${text}`);

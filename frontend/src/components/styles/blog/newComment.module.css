@@ -1,0 +1,26 @@
+.leaveComment textarea {
+  padding: 5px;
+  margin: 10px;
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+
+  resize: none;
+  border: none;
+}
+
+.sendButton {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+
+  font-size: 25px;
+
+  border: none;
+  cursor: pointer;
+}
+
+.sendButton:active {
+  background-color: rgb(30, 30, 30);
+}
