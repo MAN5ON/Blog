@@ -23,8 +23,6 @@ app.get('/', (req, res) => {
 app.post('/auth/log-in', (req, res) => {
     const token = jwt.sign({
         email: req.body.email,
-        passwordHash: req.body.passwordHash,
-
     }, 'banana-ninja')
 
 
@@ -34,28 +32,46 @@ app.post('/auth/log-in', (req, res) => {
 })
 
 app.post('/auth/sign-up', registerValidation, async (req, res) => {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json(errors.array())
+    try {
+        const errors = validationResult(req)
+        if (!errors.isEmpty()) {
+            return res.status(400).json(errors.array())
+        }
+
+        const password = req.body.password
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(password, salt)
+
+        const doc = new UserModel({
+            email: req.body.email,
+            login: req.body.login,
+            name: req.body.name,
+            surname: req.body.surname,
+            passwordHash: hash,
+            avatarURL: req.body.avatarURL
+        })
+
+        const user = await doc.save();
+
+        const token = jwt.sign({
+            _id: user._id,
+        }, 'flowers',
+            {
+                expiresIn: '30d',
+            }
+        )
+
+        const {passwordHash, ...userData} = user._doc
+        res.json({ ...userData, token })
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Ошибка регистрации'
+        })
     }
-
-    const password = req.body.password
-    const salt = await bcrypt.genSalt(10)
-    const passwordHash = await bcrypt.hash(password, salt)
-
-    const doc = new UserModel({
-        email: req.body.email,
-        login: req.body.login,
-        name: req.body.name,
-        surname: req.body.surname,
-        passwordHash: passwordHash,
-        avatarURL: req.body.avatarURL
-    })
-
-    const user = await doc.save();
-
-    res.json(user)
 })
+
 
 app.listen(666, (error) => {
     if (error) {
