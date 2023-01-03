@@ -16,19 +16,41 @@ const app = express()
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello world')
-})
+app.post('/auth/log-in', async (req, res) => {
+    try {
+        const user = await UserModel.findOne({ email: req.body.email });
 
-app.post('/auth/log-in', (req, res) => {
-    const token = jwt.sign({
-        email: req.body.email,
-    }, 'banana-ninja')
+        if (!user) {
+            return res.status(404).json({
+                message: 'Пользователь не найден'
+            })
+        }
 
+        const isValidPass = await bcrypt.compare(req.body.password, user._doc.passwordHash)
+        if (!isValidPass) {
+            return res.status(400).json({
+                message: 'Неверный логин или пароль'
+            })
+        }
 
-    res.json({
-        token
-    })
+        const token = jwt.sign({
+            _id: user._id,
+        }, 'flowers',
+            {
+                expiresIn: '30d',
+            }
+        )
+
+        const { passwordHash, ...userData } = user._doc
+        res.json({ ...userData, token })
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: 'Ошибка авторизации'
+        })
+    }
+
 })
 
 app.post('/auth/sign-up', registerValidation, async (req, res) => {
@@ -61,7 +83,7 @@ app.post('/auth/sign-up', registerValidation, async (req, res) => {
             }
         )
 
-        const {passwordHash, ...userData} = user._doc
+        const { passwordHash, ...userData } = user._doc
         res.json({ ...userData, token })
 
     } catch (error) {
@@ -72,6 +94,13 @@ app.post('/auth/sign-up', registerValidation, async (req, res) => {
     }
 })
 
+app.get('/profile', (req, res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+})
 
 app.listen(666, (error) => {
     if (error) {
