@@ -7,4 +7,5 @@ export const registerValidation = [
     body('surname', 'Фамилия должна состоять минимум из 3 букв').isLength({min: 3}),
     body('password', 'Минимальная длина пароля - 5 символов').isLength({min: 5 }),
     body('avatarURL', 'Неверная ссылка на аватарку').optional().isURL(),
+    body('userInfo', 'Максимальная длина - 300 символов').optional().isLength({max: 300})
 ]
