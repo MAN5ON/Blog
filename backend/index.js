@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { CreatePostValidation, loginValidation, registerValidation } from "./validations.js";
 import { login, profile, signup } from "./controllers/userController.js";
 import checkAuth from "./utils/checkAuth.js";
-import { createPost } from "./controllers/postController.js";
+import { createPost, deletePost, getAllPosts, getOnePost, updatePost } from "./controllers/postController.js";
 
 
 mongoose
@@ -22,13 +22,13 @@ app.post('/auth/log-in', loginValidation, login)
 app.get('/profile', checkAuth, profile)
 
 //blog page 
-// app.get('/', getAllPosts)
-//app.get('/:id', getOnePost)
+app.get('/', getAllPosts)
+app.get('/:id', getOnePost)
 app.post('/new',  checkAuth, CreatePostValidation, createPost)
 
 //post & comment
-//app.patch('/:id', updateItem)
-//app.delete('/:id', deleteItem)
+app.patch('/:id',checkAuth, updatePost)
+app.delete('/:id',checkAuth, deletePost)
 
 
 //forum page

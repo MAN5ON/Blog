@@ -5,11 +5,17 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    text: {
+    intro: {
         type: String,
         required: true,
         unique: true,
     },
+    postArr: {
+        type: Array, 
+        required:true,
+        default: [],
+    },
+
     tags: {
         type: Array,
         default: [],
@@ -35,8 +41,7 @@ const PostSchema = new mongoose.Schema({
         type: Array,
         default: []
     },
-
-    imageURL: String,
+    introIMG: String,
 
 }, {
     timestamps: true,
