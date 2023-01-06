@@ -9,3 +9,15 @@ export const registerValidation = [
     body('avatarURL', 'Неверная ссылка на аватарку').optional().isURL(),
     body('userInfo', 'Максимальная длина - 300 символов').optional().isLength({max: 300})
 ]
+
+export const loginValidation = [
+    body('email', 'Неверный формат почты').isEmail(),
+    body('password', 'Минимальная длина пароля - 5 символов').isLength({min: 5 }),
+]
+
+export const CreatePostValidation = [
+    body('title', 'Введите заголовок статьи').isLength({min: 3}),
+    body('text', 'Введите текст статьи').isLength({min: 5}),
+    body('tags', 'Неверный формат тэгов').optional(),
+    body('imageURL', 'Неверная ссылка на изображение').optional().isURL(),
+]
