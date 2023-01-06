@@ -5,7 +5,7 @@ export default (req,res,next) => {
     if (token) {
         try {
             const decoded = jwt.verify(token, 'flowers');
-            req.userId = decoded._id
+            req.userID = decoded._id
             next()
         } catch (error) {
             return res.status(403).json({

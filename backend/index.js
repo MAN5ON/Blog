@@ -1,13 +1,10 @@
 import express from "express";
-import jwt from 'jsonwebtoken'
 import mongoose from "mongoose";
-import bcrypt from "bcrypt"
-import { validationResult } from "express-validator";
 
-import { registerValidation } from "./validations/auth.js";
+import { CreatePostValidation, loginValidation, registerValidation } from "./validations.js";
 import { login, profile, signup } from "./controllers/userController.js";
-import UserModel from "./models/user.js"
 import checkAuth from "./utils/checkAuth.js";
+import { createPost } from "./controllers/postController.js";
 
 
 mongoose
@@ -19,11 +16,25 @@ const app = express()
 
 app.use(express.json());
 
-app.post('/auth/log-in', login)
-
+//user pages
 app.post('/auth/sign-up', registerValidation, signup)
-
+app.post('/auth/log-in', loginValidation, login)
 app.get('/profile', checkAuth, profile)
+
+//blog page 
+// app.get('/', getAllPosts)
+//app.get('/:id', getOnePost)
+app.post('/new',  checkAuth, CreatePostValidation, createPost)
+
+//post & comment
+//app.patch('/:id', updateItem)
+//app.delete('/:id', deleteItem)
+
+
+//forum page
+//app.get('/forum', getAllMessages)
+//app.patch('/forum:id', updateMessage)
+//app.delete('/forum:id', deleteMessage)
 
 app.listen(666, (error) => {
     if (error) {

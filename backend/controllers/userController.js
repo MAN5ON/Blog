@@ -1,3 +1,9 @@
+import jwt from 'jsonwebtoken'
+import bcrypt from "bcrypt"
+
+import UserModel from "../models/user.js"
+
+
 export const signup = async (req, res) => {
     try {
         const errors = validationResult(req)
@@ -79,7 +85,7 @@ export const login = async (req, res) => {
 
 export const profile = async (req, res) => {
     try {
-        const user = await UserModel.findById(req.userId)
+        const user = await UserModel.findById(req.userID)
         if (!user) {
             return res.status(404).json({
                 message: 'Пользователь не найден'
