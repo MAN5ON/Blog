@@ -1,10 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 
-import { CreatePostValidation, loginValidation, registerValidation } from "./validations.js";
-import { login, profile, signup } from "./controllers/userController.js";
 import checkAuth from "./utils/checkAuth.js";
+import { createMessageValidation, createPostValidation, loginValidation, registerValidation } from "./validations.js";
+
 import { createPost, updatePost, deletePost, getAllPosts, getOnePost } from "./controllers/postController.js";
+import { createMessage, deleteMessage, getAllMessages, updateMessage } from "./controllers/forumController.js";
+import { login, profile, signup } from "./controllers/userController.js";
 
 
 mongoose
@@ -24,14 +26,15 @@ app.get('/profile', checkAuth, profile)
 //blog page 
 app.get('/', getAllPosts)
 app.get('/:id', getOnePost)
-app.post('/new', checkAuth, CreatePostValidation, createPost)
+app.post('/new', checkAuth, createPostValidation, createPost)
 app.patch('/:id', checkAuth, updatePost)
 app.delete('/:id', checkAuth, deletePost)
 
 //forum page
-//app.get('/forum', getAllMessages)
-//app.patch('/forum:id', updateMessage)
-//app.delete('/forum:id', deleteMessage)
+app.get('/forum', getAllMessages)
+app.post('/forum', checkAuth, createMessageValidation, createMessage)
+app.patch('/forum:id', checkAuth, updateMessage)
+app.delete('/forum:id', checkAuth, deleteMessage)
 
 app.listen(666, (error) => {
     if (error) {

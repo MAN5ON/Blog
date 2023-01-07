@@ -15,9 +15,13 @@ export const loginValidation = [
     body('password', 'Минимальная длина пароля - 5 символов').isLength({ min: 5 }),
 ]
 
-export const CreatePostValidation = [
+export const createPostValidation = [
     body('title', 'Введите заголовок статьи').isLength({ min: 3 }),
     body('intro', 'Введите текст статьи').isLength({ min: 5 }),
     body('introIMG', 'Неверная ссылка на изображение').optional().isURL(),
     body('postArr', 'Максимальное количество элементов для статьи - 20').optional().isArray().isLength({ max: 20 }),
+]
+
+export const createMessageValidation = [
+    body('text', 'Сообщение должно быть в диапазоне от 1 до 100 символов').isLength({min: 1, max: 100})
 ]
