@@ -10,6 +10,11 @@ const PostSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    postArr: {
+        type: Array,
+        required: true,
+        default: [],
+    },
     tags: {
         type: Array,
         default: [],
