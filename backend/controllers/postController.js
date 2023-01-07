@@ -1,6 +1,6 @@
 import PostModel from '../models/post.js'
 
-export const getAllPosts = async (req, res) => {
+export const getAllPosts = async (res) => {
     try {
         const posts = await PostModel.find().populate('author').exec()
         res.json(posts)
