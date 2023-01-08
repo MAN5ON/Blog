@@ -18,23 +18,24 @@ const app = express()
 
 app.use(express.json());
 
-//user pages
+//get req
+app.get('/forum', getAllMessages)
+app.get('/profile', checkAuth, profile)
+app.get('/:id', getOnePost)
+app.get('/', getAllPosts)
+
+
 app.post('/auth/sign-up', registerValidation, signup)
 app.post('/auth/log-in', loginValidation, login)
-app.get('/profile', checkAuth, profile)
-
-//blog page 
-app.get('/', getAllPosts)
-app.get('/:id', getOnePost)
+app.post('/forum', checkAuth, createMessageValidation, createMessage)
 app.post('/new', checkAuth, createPostValidation, createPost)
+
+app.patch('/forum:id', checkAuth, updateMessage)
 app.patch('/:id', checkAuth, updatePost)
+
+app.delete('/forum:id', checkAuth, deleteMessage)
 app.delete('/:id', checkAuth, deletePost)
 
-//forum page
-app.get('/forum', getAllMessages)
-app.post('/forum', checkAuth, createMessageValidation, createMessage)
-app.patch('/forum:id', checkAuth, updateMessage)
-app.delete('/forum:id', checkAuth, deleteMessage)
 
 app.listen(666, (error) => {
     if (error) {

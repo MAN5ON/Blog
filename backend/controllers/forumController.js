@@ -1,6 +1,6 @@
 import MessageModel from '../models/message.js'
 
-export const getAllMessages = async (res) => {
+export const getAllMessages = async (req, res) => {
     try {
         const messages = await MessageModel.find().populate('author').exec()
         res.json(messages)
@@ -14,8 +14,8 @@ export const getAllMessages = async (res) => {
 
 export const createMessage = async (req, res) => {
     try {
-        const doc = new PostModel({
-            text: req.body.title,
+        const doc = new MessageModel({
+            text: req.body.text,
             author: req.userID,
             likesCount: req.body.likesCount,
         })
@@ -36,7 +36,7 @@ export const updateMessage = async (req, res) => {
         await MessageModel.updateOne({
             _id: itemID,
         }, {
-            text: req.body.title,
+            text: req.body.text,
         })
         res.json({
             success: true

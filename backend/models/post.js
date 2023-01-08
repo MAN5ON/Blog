@@ -36,10 +36,24 @@ const PostSchema = new mongoose.Schema({
         required: true,
     },
 
-    comments: {
-        type: Array,
-        default: []
-    },
+    comments: [{
+        author: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+        },
+    
+        text: {
+            type: String,
+            required: true,
+        },
+        likesCount: {
+            type: Number,
+            default: 0
+        },
+    }, {
+        timestamps: true,
+    }],
 
     imageURL: String,
 
