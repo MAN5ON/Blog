@@ -24,16 +24,15 @@ app.get('/profile', checkAuth, profile)
 app.get('/:id', getOnePost)
 app.get('/', getAllPosts)
 
-
 app.post('/auth/sign-up', registerValidation, signup)
 app.post('/auth/log-in', loginValidation, login)
 app.post('/forum', checkAuth, createMessageValidation, createMessage)
 app.post('/new', checkAuth, createPostValidation, createPost)
 
-app.patch('/forum:id', checkAuth, updateMessage)
+app.patch('/forum/:id', checkAuth, updateMessage)
 app.patch('/:id', checkAuth, updatePost)
 
-app.delete('/forum:id', checkAuth, deleteMessage)
+app.delete('/forum/:id', checkAuth, deleteMessage)
 app.delete('/:id', checkAuth, deletePost)
 
 
