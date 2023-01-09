@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import checkAuth from "./utils/checkAuth.js";
 import { MessageValidation, PostValidation, loginValidation, registerValidation, profileInfoValidation } from "./validations.js";
 
-import { createPost, updatePost, deletePost, getAllPosts, getOnePost } from "./controllers/postController.js";
+import { updatePost, deletePost, getAllPosts, getOnePost, newPost } from "./controllers/postController.js";
 import { createMessage, deleteMessage, getAllMessages, updateMessage } from "./controllers/forumController.js";
 import { deleteProfile, login, openProfile, signup, updateProfile } from "./controllers/userController.js";
 
@@ -17,6 +17,8 @@ mongoose
 const app = express()
 
 app.use(express.json());
+
+
 
 //get req
 app.get('/forum', getAllMessages)
