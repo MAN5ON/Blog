@@ -45,8 +45,7 @@ export const getOnePost = (req, res) => {
     }
 }
 
-
-export const createPost = async (req, res) => {
+export const newPost = async (req, res) => {
     try {
         const doc = new PostModel({
             title: req.body.title,
@@ -81,6 +80,11 @@ export const updatePost = async (req, res) => {
             introIMG: req.body.introIMG,
             postArr: req.body.text,
             tags: req.body.tags,
+            // Комментарий выглядит как массив объектов с default = []
+            // Значит при работе с комментариями нам не нужно создавать/удалять массив,
+            // а изменять массив комментариев внутри модели поста...
+            // т.е. в теории на все виды задач с комментариями(создание, удаление, изменение) хватит одной функции ?
+            comments: req.body.comments
         })
         res.json({
             success: true
@@ -88,7 +92,7 @@ export const updatePost = async (req, res) => {
     } catch (error) {
         console.log(error)
         res.status(500).json({
-            message: 'Ошибка при обновлении статьи'
+            message: 'Ошибка при обновлении информации'
         })
     }
 }
