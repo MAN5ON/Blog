@@ -83,7 +83,7 @@ export const login = async (req, res) => {
 
 }
 
-export const profile = async (req, res) => {
+export const openProfile = async (req, res) => {
     try {
         const user = await UserModel.findById(req.userID)
         if (!user) {
@@ -97,6 +97,55 @@ export const profile = async (req, res) => {
         console.log(error)
         res.status(500).json({
             message: 'Ошибка при поиске пользователя'
+        })
+    }
+}
+
+export const updateProfile = async (req, res) => {
+    try {
+        const userID = req.params.id
+        await UserModel.updateOne({
+            _id: userID
+        }, {
+            avatarURL: req.body.avatarURL,
+            userInfo: req.body.userInfo
+        })
+        res.json({
+            success: true
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Ошибка при обновлении профиля'
+        })
+    }
+}
+
+export const deleteProfile = async (req, res) => {
+    try {
+        const itemID = req.params.id
+        UserModel.findByIdAndDelete({
+            _id: itemID,
+        }, (error, doc) => {
+            if (error) {
+                console.log(error)
+                return res.status(500).json({
+                    message: 'Не удалось получить пользователя'
+                })
+            }
+            if (!doc) {
+                return res.status(404).json({
+                    message: 'Пользователь не найден'
+                })
+            }
+            res.json({
+                success: true
+            })
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось удалить пользователя'
         })
     }
 }
