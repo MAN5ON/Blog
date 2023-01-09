@@ -2,11 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 
 import checkAuth from "./utils/checkAuth.js";
-import { createMessageValidation, createPostValidation, loginValidation, registerValidation } from "./validations.js";
+import { MessageValidation, PostValidation, loginValidation, registerValidation, profileInfoValidation } from "./validations.js";
 
 import { updatePost, deletePost, getAllPosts, getOnePost, newPost } from "./controllers/postController.js";
 import { createMessage, deleteMessage, getAllMessages, updateMessage } from "./controllers/forumController.js";
-import { login, profile, signup } from "./controllers/userController.js";
+import { deleteProfile, login, openProfile, signup, updateProfile } from "./controllers/userController.js";
 
 
 mongoose
@@ -22,19 +22,21 @@ app.use(express.json());
 
 //get req
 app.get('/forum', getAllMessages)
-app.get('/profile', checkAuth, profile)
+app.get('/profile/:id', checkAuth, openProfile)
 app.get('/:id', getOnePost)
 app.get('/', getAllPosts)
 
 app.post('/auth/sign-up', registerValidation, signup)
 app.post('/auth/log-in', loginValidation, login)
-app.post('/forum', checkAuth, createMessageValidation, createMessage)
-app.post('/new', checkAuth, createPostValidation, newPost)
+app.post('/forum', checkAuth, MessageValidation, createMessage)
+app.post('/new', checkAuth, PostValidation, createPost)
 
-app.patch('/forum/:id', checkAuth, updateMessage)
-app.patch('/:id', checkAuth, updatePost, )
+app.patch('/forum/:id', checkAuth, MessageValidation, updateMessage)
+app.patch('/profile/:id', checkAuth, profileInfoValidation, updateProfile)
+app.patch('/:id', checkAuth, PostValidation, updatePost)
 
 app.delete('/forum/:id', checkAuth, deleteMessage)
+app.delete('/profile/:id', checkAuth, deleteProfile)
 app.delete('/:id', checkAuth, deletePost)
 
 
