@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import checkAuth from "./utils/checkAuth.js";
 import { createMessageValidation, createPostValidation, loginValidation, registerValidation } from "./validations.js";
 
-import { createPost, updatePost, deletePost, getAllPosts, getOnePost } from "./controllers/postController.js";
+import { updatePost, deletePost, getAllPosts, getOnePost, newPost } from "./controllers/postController.js";
 import { createMessage, deleteMessage, getAllMessages, updateMessage } from "./controllers/forumController.js";
 import { login, profile, signup } from "./controllers/userController.js";
 
@@ -18,6 +18,8 @@ const app = express()
 
 app.use(express.json());
 
+
+
 //get req
 app.get('/forum', getAllMessages)
 app.get('/profile', checkAuth, profile)
@@ -27,10 +29,10 @@ app.get('/', getAllPosts)
 app.post('/auth/sign-up', registerValidation, signup)
 app.post('/auth/log-in', loginValidation, login)
 app.post('/forum', checkAuth, createMessageValidation, createMessage)
-app.post('/new', checkAuth, createPostValidation, createPost)
+app.post('/new', checkAuth, createPostValidation, newPost)
 
 app.patch('/forum/:id', checkAuth, updateMessage)
-app.patch('/:id', checkAuth, updatePost)
+app.patch('/:id', checkAuth, updatePost, )
 
 app.delete('/forum/:id', checkAuth, deleteMessage)
 app.delete('/:id', checkAuth, deletePost)
