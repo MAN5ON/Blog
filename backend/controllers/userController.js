@@ -6,11 +6,6 @@ import UserModel from "../models/user.js"
 
 export const signup = async (req, res) => {
     try {
-        const errors = validationResult(req)
-        if (!errors.isEmpty()) {
-            return res.status(400).json(errors.array())
-        }
-
         const password = req.body.password
         const salt = await bcrypt.genSalt(10)
         const hash = await bcrypt.hash(password, salt)
