@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TemplateButton } from "../../templates/button";
+import { TemplateButton } from "../../../templates/button";
 import s from "../../styles/blog/newComment.module.css";
 
 export const InputComment = () => {

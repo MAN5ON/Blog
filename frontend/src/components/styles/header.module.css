@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 0 25px 0 25px;
 
-  background-color: rgb(20, 20, 20);
+  background-color: var(--component-bg);
 
   text-decoration: none;
 }
@@ -13,7 +13,7 @@
 a {
   align-self: center;
 
-  color: rgb(255, 255, 255);
+  color: var(--main-text-color);
 
   text-decoration: none;
 }
@@ -35,7 +35,7 @@ a {
   border: none;
 
   font-size: 20px;
-  color: rgb(255, 255, 255);
+  color: var(--main-text-color);
 
   cursor: pointer;
   background: none;

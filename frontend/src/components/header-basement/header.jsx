@@ -16,7 +16,7 @@ export const Header = () => {
         </Link>
       </div>
 
-      <Link to="/login" className={s.loginButton}>
+      <Link to="/log-in" className={s.loginButton}>
         Login
       </Link>
     </header>

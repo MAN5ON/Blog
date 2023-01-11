@@ -14,8 +14,8 @@
   padding: 15px;
   border-radius: 15px;
 
-  color: rgb(255, 255, 255);
-  background-color: rgb(20, 20, 20);
+  color: var(--main-text-color);
+  background-color: var(--component-bg);
 }
 
 .username {
@@ -23,7 +23,7 @@
   margin: 0 5px 5px 5px;
   font-size: 20px;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: var(--main-text-color);
 }
 
 .message {
@@ -35,7 +35,7 @@
   white-space: pre;
   word-wrap: break-word;
   font-size: 16px;
-  color: rgb(200, 200, 200);
+  color: var(--message-color);
 }
 
 .headMessage {
@@ -63,8 +63,8 @@
   border-radius: 30%;
 
   font-size: 14px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(20, 20, 20);
+  color: var(--main-text-color);
+  background-color: var(--component-bg);
 
   cursor: pointer;
   border: none;

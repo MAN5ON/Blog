@@ -1,12 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import s from "../../styles/blog/blog.module.css";
 
-export const BlogItem = () => {
+export const BlogShield = () => {
   return (
     <div className={s.itemBlog}>
       <div className={s.authorBlog}>Renat Bikmukhamedov</div>
-      <div className={s.nameBlog}>Blog #1</div>
+      <Link to="/id">
+        <div className={s.nameBlog}>Blog #1</div>
+      </Link>
+
       <img
         className={s.blogPic}
         src="https://images.unsplash.com/photo-1666214280165-20e3d73d70bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"

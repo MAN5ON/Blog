@@ -15,8 +15,8 @@
   margin: 15px auto;
   padding: 25px;
 
-  color: rgb(255, 255, 255);
-  background-color: rgb(20, 20, 20);
+  color: var(--main-text-color);
+  background-color: var(--component-bg);
 }
 
 .authorBlog {
@@ -55,7 +55,7 @@
   margin: 5px;
   border-radius: 5px;
 
-  background-color: rgb(30, 30, 30);
+  background-color: var(--window-bg);
   cursor: pointer;
 }
 

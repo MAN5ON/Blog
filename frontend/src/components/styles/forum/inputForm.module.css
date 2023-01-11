@@ -9,7 +9,7 @@
   padding: 15px;
 
   border-radius: 25px;
-  background-color: rgb(20, 20, 20);
+  background-color: var(--component-bg);
 }
 
 .inputForm textarea {
@@ -17,8 +17,8 @@
   height: 65px;
 
   font-size: 16px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(20, 20, 20);
+  color: var(--main-text-color);
+  background-color: var(--component-bg);
 
   border: none;
   resize: none;

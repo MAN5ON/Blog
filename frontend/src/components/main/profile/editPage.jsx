@@ -1,4 +1,5 @@
 import s from "../../styles/profile/profile.module.css";
+import { TemplateButton } from "../../templates/button";
 
 export const EditPage = ({ pageText, changePageText, showEditPage }) => {
   return (
@@ -9,9 +10,7 @@ export const EditPage = ({ pageText, changePageText, showEditPage }) => {
         value={pageText}
         onChange={(e) => changePageText(e.target.value)}
       />
-      <button className={s.saveButton} onClick={() => showEditPage(false)}>
-        Save
-      </button>
+      <TemplateButton text="SAVE" click={() => showEditPage(false)}/>
     </div>
   );
 };
