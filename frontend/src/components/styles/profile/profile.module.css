@@ -8,8 +8,8 @@
   padding: 20px 25px 25px 25px;
   border-radius: 25px;
 
-  color: rgb(255, 255, 255);
-  background-color: rgb(20, 20, 20);
+  color: var(--main-text-color);
+  background-color: var(--component-bg);
 }
 
 .userBar {
@@ -52,7 +52,7 @@
   padding-bottom: 15px;
 
   font-size: 16px;
-  background-color: rgb(20, 20, 20);
+  background-color: var(--component-bg);
 }
 
 .shortInfo {
@@ -73,29 +73,14 @@
   border-radius: 5px;
 
   font-size: 16px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(30, 30, 30);
+  color: var(--main-text-color);
+  background-color: var(--window-bg);
 
   resize: none;
   outline: none;
   border: none;
 }
 
-.saveButton {
+.editPage button {
   margin: 15px auto;
-  padding: 15px 25px;
-  border-radius: 10px;
-
-  font-size: 18px;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-.saveButton:active {
-  background-color: rgb(150, 150, 150);
 }

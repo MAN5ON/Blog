@@ -4,9 +4,9 @@
 
   font-size: 20px;
   font-weight: bold;
-  color: rgb(20, 20, 20);
-  background-color: rgb(255, 255, 255);
-  box-shadow:3px 3px 3px black;
+  color: var(--component-bg);
+  background-color: var(--main-text-color);
+  box-shadow: 3px 3px 3px black;
 
   cursor: pointer;
   outline: none;
@@ -14,5 +14,5 @@
 }
 
 .buttonTemp:active {
-    background-color: rgb(50, 50, 50);
+  background-color: var(--button-active-bg);
 }

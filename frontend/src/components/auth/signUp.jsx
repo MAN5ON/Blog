@@ -1,5 +1,6 @@
 import { TemplateButton } from "../templates/button";
 import s from "../styles/auth/auth.module.css";
+import { Link } from "react-router-dom";
 
 export const SignUp = ({ showLogin }) => {
   return (
@@ -12,8 +13,10 @@ export const SignUp = ({ showLogin }) => {
         <input type="password" placeholder="Password" />
         <input type="password" placeholder="Confirm Password" />
       </div>
-      <TemplateButton text='SIGN UP'/>
-      <button className={s.SecondButton} onClick={()=>showLogin(true)}>Log In</button>
+      <TemplateButton text="SIGN UP" />
+      <Link to="/log-in">
+        <button className={s.SecondButton}>Log In</button>
+      </Link>
     </div>
   );
 };
