@@ -19,8 +19,8 @@ function App() {
       <div className='mainPage'>
         <Routes>
           <Route path="/" element={<Blog />} />
-          <Route path="/id" element={<BlogItem />} />
-          <Route path="/new" element={<NewPostItem />} />
+          <Route path="/posts/:id" element={<BlogItem />} />
+          <Route path="/post-editor" element={<NewPostItem />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/log-in" element={<LogIn />} />

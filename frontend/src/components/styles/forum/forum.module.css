@@ -2,6 +2,16 @@
   margin: 5px 0;
   height: 33vw;
   overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.messageHistory::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--window-bg);
+}
+
+.messageHistory::-webkit-scrollbar-thumb {
+  background: var(--component-bg);
 }
 
 .chatMessage {
@@ -16,6 +26,10 @@
 
   color: var(--main-text-color);
   background-color: var(--component-bg);
+}
+
+.chatMessage:last-child{
+  background-color: green;
 }
 
 .username {

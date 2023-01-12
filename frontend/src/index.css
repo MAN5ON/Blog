@@ -5,8 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(30, 30, 30);
+  background-color: var(--window-bg);
   font-size: 16px;
+  
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--window-bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--component-bg);
 }
 
 code {

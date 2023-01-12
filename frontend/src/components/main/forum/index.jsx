@@ -14,6 +14,7 @@ export const Forum = () => {
       {forum.slice(0).map((message) => (
         <MessageItem key={message.id} {...message} />
       ))}
+      <div id='hidden'></div>
       </div>
       <NewMessageForm />
     </main>

@@ -13,6 +13,8 @@ export const NewMessageForm = () => {
     if (text.trim().length) {
       dispatch(addMessage({ text }));
       setText("");
+      let hiddenElem = document.getElementById('hidden')
+      hiddenElem.scrollIntoView()
     }
   };
 

@@ -32,11 +32,19 @@ a {
 }
 
 .header button {
-  border: none;
+  padding: 10px 20px;
+  margin: 5px;
 
-  font-size: 20px;
-  color: var(--main-text-color);
+  font-size: 14px;
+  color: var(--component-bg);
+  background-color: rgb(250, 250, 250);
 
   cursor: pointer;
-  background: none;
+  border-radius: 5px;
+  box-shadow: var(--window-bg);
+}
+
+.headerIsAuth {
+  align-self: center;
+  align-content: flex-end;
 }
