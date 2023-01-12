@@ -1,6 +1,6 @@
 import React from "react";
 
-import s from "../../styles/blog/commentItem.module.css";
+import s from "../../../styles/blog/commentItem.module.css";
 
 export const CommentItem = (comment) => {
   return (

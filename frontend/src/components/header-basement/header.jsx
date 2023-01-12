@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import s from "./../styles/header.module.css";
 
 export const Header = () => {
+  const isAuth = false
   return (
     <header className={s.header}>
       <div className={s.navBar}>
@@ -16,9 +17,18 @@ export const Header = () => {
         </Link>
       </div>
 
-      <Link to="/log-in" className={s.loginButton}>
-        Login
-      </Link>
+      {isAuth ? (
+        <div className={s.headerIsAuth}>
+          <Link to="/post-editor">
+            <button>New post</button>
+          </Link>
+          <button>Log out</button>
+        </div>
+      ) : (
+        <Link to="/log-in" className={s.loginButton}>
+          <button>Auth</button>
+        </Link>
+      )}
     </header>
   );
 };

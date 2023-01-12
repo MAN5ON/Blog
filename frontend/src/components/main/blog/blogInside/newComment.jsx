@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TemplateButton } from "../../../templates/button";
-import s from "../../styles/blog/newComment.module.css";
+import s from "../../../styles/blog/newComment.module.css";
 
 export const InputComment = () => {
   const [comment, setComment] = useState("");
