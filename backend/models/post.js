@@ -2,11 +2,15 @@ import mongoose from "mongoose";
 
 const PostSchema = new mongoose.Schema({
     title: String,
+    introText: String,
+    introIMG: String,
+    tags: Array,
+
     postArr: [{
         text: String,
-        imageURL:String,
+        imageURL: String,
     }],
-    tags: Array,
+
     viewsCount: {
         type: Number,
         default: 0
@@ -34,9 +38,6 @@ const PostSchema = new mongoose.Schema({
     }, {
         timestamps: true,
     }],
-
-    imageURL: String,
-
 }, {
     timestamps: true,
 })

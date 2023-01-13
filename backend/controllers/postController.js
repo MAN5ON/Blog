@@ -49,7 +49,7 @@ export const newPost = async (req, res) => {
     try {
         const doc = new PostModel({
             title: req.body.title,
-            intro: req.body.intro,
+            introText: req.body.introText,
             introIMG: req.body.introIMG,
             postArr: req.body.postArr,
             tags: req.body.tags,

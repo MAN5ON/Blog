@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import multer from "multer";
+import cors from "cors"
 
 import checkAuth from "./utils/checkAuth.js";
 import { MessageValidation, PostValidation, loginValidation, registerValidation, profileInfoValidation } from "./validations.js";
@@ -29,19 +30,20 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 app.use(express.json());
+app.use(cors())
 app.use('/uploads', express.static('uploads'))
 
 //get req-res
 app.get('/forum', getAllMessages)
 app.get('/profile/:id', checkAuth, openProfile)
-app.get('/:id', getOnePost)
-app.get('/', getAllPosts)
+app.get('/posts/:id', getOnePost)
+app.get('/posts', getAllPosts)
 
 //post req-res
 app.post('/auth/sign-up', registerValidation, handleValidationsErrors, signup)
 app.post('/auth/log-in', loginValidation,handleValidationsErrors, login)
 app.post('/forum', checkAuth, MessageValidation, handleValidationsErrors, createMessage)
-app.post('/new', checkAuth, PostValidation, handleValidationsErrors, createPost)
+app.post('/new', checkAuth, PostValidation, handleValidationsErrors, newPost)
 //upload image
 app.post('/uploads', checkAuth, upload.single('image'), (req,res)=> {
     res.json({
@@ -52,12 +54,12 @@ app.post('/uploads', checkAuth, upload.single('image'), (req,res)=> {
 //patch req-res
 app.patch('/forum/:id', checkAuth, MessageValidation, handleValidationsErrors, updateMessage)
 app.patch('/profile/:id', checkAuth, profileInfoValidation, handleValidationsErrors, updateProfile)
-app.patch('/:id', checkAuth, PostValidation, handleValidationsErrors, updatePost)
+app.patch('/posts/:id', checkAuth, PostValidation, handleValidationsErrors, updatePost)
 
 //delete req-res
 app.delete('/forum/:id', checkAuth, deleteMessage)
 app.delete('/profile/:id', checkAuth, deleteProfile)
-app.delete('/:id', checkAuth, deletePost)
+app.delete('/posts/:id', checkAuth, deletePost)
 
 
 app.listen(666, (error) => {

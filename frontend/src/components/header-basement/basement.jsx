@@ -18,13 +18,13 @@ export const Basement = () => {
         </div>
         <div className={s.gmail}>
           <a className={s.mail} href="mailto: bikmukhamedov.renat@gmail.com">
-            <p>Contact Us!</p>
+            <p>Contact Me!</p>
           </a>
           <div>+7(906)403-07-75</div>
         </div>
         
       </div>
-      <p>2022. Povered by Renat Bikmukhamedov. All Rights Reserved.</p>
+      <p>2023. Povered by Renat Bikmukhamedov. All Rights Reserved.</p>
     </footer>
   );
 };
