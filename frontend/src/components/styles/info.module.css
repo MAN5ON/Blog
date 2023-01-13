@@ -1,0 +1,19 @@
+.info {
+    width: 50%;
+    margin: 35px auto;
+    text-align:center;
+    font-size: 20px;
+    font-weight: lighter;
+    color: var(--main-text-color);
+}
+
+.info ul {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+
+    font-weight: bolder;
+    text-align: left;
+    list-style-type: hiragana;
+}

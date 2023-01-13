@@ -1,3 +1,8 @@
+@keyframes background_color_change {
+	from { background-color: rgb(60, 60, 60); }
+	to { background-color: rgb(20, 20, 20); }
+}
+
 .blogPage {
   display: flex;
   flex-direction: column;
@@ -10,13 +15,18 @@
   left: 2%;
 }
 
-.itemBlog {
+.itemBlog, .itemBlogLoading {
   width: 60%;
   margin: 15px auto;
   padding: 25px;
 
+  border-radius: 5px;
   color: var(--main-text-color);
   background-color: var(--component-bg);
+}
+
+.itemBlogLoading {
+  animation: background_color_change 1s infinite alternate;
 }
 
 .authorBlog {
