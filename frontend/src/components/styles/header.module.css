@@ -40,8 +40,14 @@ a {
   background-color: rgb(250, 250, 250);
 
   cursor: pointer;
+  border: none;
+  
   border-radius: 5px;
   box-shadow: var(--window-bg);
+}
+
+.header button:active {
+  background-color: rgb(150, 150, 150);
 }
 
 .headerIsAuth {

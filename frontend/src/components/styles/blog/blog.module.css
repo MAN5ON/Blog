@@ -46,10 +46,11 @@
   cursor: pointer;
 }
 
-.blogPage img {
+.blogPic {
   width: 100%;
   min-height: 50%;
   max-height: 100%;
+  border-radius: 15px;
 }
 
 .blogTags {

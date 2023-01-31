@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import s from "../../styles/blog/blog.module.css";
 
@@ -20,7 +19,7 @@ export const BlogLoadingShield = () => {
         <div className={s.blogTagItem}>#???</div>
       </div>
       <div className={s.footerBlog}>
-        <div className={s.blogDate}>Post created ???</div>
+        <div className={s.blogDate}>???</div>
         <div className={s.blogLikes}>??? likes</div>
         <div className={s.blogwiews}>??? wiews</div>
       </div>
