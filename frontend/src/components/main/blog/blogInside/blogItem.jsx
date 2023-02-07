@@ -1,10 +1,24 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import s from "../../../styles/blog/blogItem.module.css";
 import { CommentItem } from "./commentItem";
 import { InputComment } from "./newComment";
 
 export const BlogItem = () => {
+  const [data, setData] = useState;
+  const [isLoading, setLoading] = useState;
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios.get(`/posts/${id}`).then( res => {
+      setData(res.data)
+    }).catch( err => {console.warn(err)
+    alert('Ошибка при получении статьи')
+  })
+  }, [])
+
   return (
     <div className={s.blogItem}>
       <h1 className={s.header}> Заголовок </h1>
