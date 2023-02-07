@@ -6,7 +6,7 @@ import s from "../../styles/blog/blog.module.css";
 export const BlogShield = ({id, author, title, introText, introIMG, tags, creationDate, likes, views,}) => {
   return (
     <div className={s.itemBlog}>
-      <Link to={`/${id}`}>
+      <Link to={`/posts/${id}`}>
         <div className={s.nameBlog}>{title.toUpperCase()}</div>
       </Link>
       <img
