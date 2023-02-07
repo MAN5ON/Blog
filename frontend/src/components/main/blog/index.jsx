@@ -16,7 +16,7 @@ export const Blog = () => {
 
   return (
     <div className={s.blogPage}>
-      {(isPostLoading===false ? <IsLoading/> : posts.items.map((obj, index) => 
+      {(isPostLoading ? <IsLoading/> : posts.items.map((obj, index) => 
         (<BlogShield key={index}
            id={obj._id}
            author = {obj.author.login}

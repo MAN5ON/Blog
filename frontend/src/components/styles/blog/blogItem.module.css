@@ -54,8 +54,9 @@
     background-color: rgb(50, 50, 50);
 }
 
-.likes {
-    margin: auto;
+.blogFooter {
+    display: flex;
+    justify-content: space-around;
     font-size: 20px;
-    padding: 10px;
+    font-weight: lighter;
 }
