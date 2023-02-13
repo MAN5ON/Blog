@@ -7,8 +7,8 @@ const PostSchema = new mongoose.Schema({
     tags: Array,
 
     postArr: [{
-        text: String,
-        imageURL: String,
+        itemType: String,
+        itemContent: String
     }],
 
     viewsCount: {

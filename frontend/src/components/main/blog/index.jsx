@@ -8,7 +8,7 @@ import { IsLoading } from "../../templates/isLoading";
 
 export const Blog = () => {
   const dispatch = useDispatch()
-  const { posts, tags } = useSelector(state => state.blog)
+  const { posts } = useSelector(state => state.blog)
   const isPostLoading = posts.status === 'loading'
   useEffect(()=> {
     dispatch(fetchPosts())
@@ -16,7 +16,9 @@ export const Blog = () => {
 
   return (
     <div className={s.blogPage}>
-      {(isPostLoading ? <IsLoading/> : posts.items.map((obj, index) => 
+      {(isPostLoading ? <IsLoading/> :
+       posts.items == null ? alert("Post's array is empty") :
+        posts.items.map((obj, index) => 
         (<BlogShield key={index}
            id={obj._id}
            author = {obj.author.login}
