@@ -28,11 +28,54 @@ export const BlogItem = () => {
   return isLoading ? (
     <IsLoading />
   ) : (
-    <div className={s.blogItem}>
-      <h1 className={s.header}> {data.title.toUpperCase()} </h1>
-      <div className={s.info}>
-        <div className={s.creationDate}>
-          {new Date(data.createdAt).toLocaleString("en", {
+    <div className={s.blogPage}>
+      <div className={s.blogItem}>
+        <h1 className={s.header}> {data.title.toUpperCase()} </h1>
+        <div className={s.info}>
+          <div className={s.creationDate}>
+            {new Date(data.createdAt).toLocaleString("en", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              hour12: "false",
+              hour: "numeric",
+              minute: "numeric",
+            })}
+          </div>
+          <div className={s.author}>{data.author}</div>
+        </div>
+
+        <div className={s.content}>
+          {data.postArr.map((item) =>
+            item.itemType === "text" ? (
+              <div className={s.textItem}>{item.itemContent}</div>
+            ) : item.itemType === "image" ? (
+              <img
+                className={s.imageItem}
+                src={item.itemContent}
+                alt="Didn't load"
+              />
+            ) : (
+              <div className={s.error}>Error: undefined type.</div>
+            )
+          )}
+        </div>
+
+        <div className={s.blogTags}>
+          {data.tags.map((tag) => (
+            <div className={s.blogTagItem}>#{tag}</div>
+          ))}
+        </div>
+        <div className={s.blogFooter}>
+          <span className={s.views}>{data.viewsCount}👀</span>
+          <span className={s.likes}>{data.likesCount}❤️</span>
+        </div>
+      </div>
+      {data.comments.map((comment) => (
+        <CommentItem
+          author={comment.author}
+          text={comment.text}
+          dateComment={new Date(comment.createdAt).toLocaleString("en", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -40,26 +83,6 @@ export const BlogItem = () => {
             hour: "numeric",
             minute: "numeric",
           })}
-        </div>
-        <div className={s.author}>{data.author}</div>
-      </div>
-
-      <div className={s.blogTags}>
-        {data.tags.map((tag) => (
-          <div className={s.blogTagItem}>#{tag}</div>
-        ))}
-      </div>
-      <div className={s.blogFooter}>
-        <span className={s.views}>{data.viewsCount}👀</span>
-        <span className={s.likes}>{data.likesCount}❤️</span>
-      </div>
-      <hr width="70%" color="gray" />
-
-      {data.comments.map((comment) => (
-        <CommentItem
-          author={comment.author}
-          text={comment.text}
-          dateComment={new Date(comment.createdAt).toLocaleString("en", {  year: 'numeric', month: 'long', day: 'numeric', hour12: 'false', hour: 'numeric', minute:'numeric', })}
           likesCount={comment.likesCount}
         />
       ))}
