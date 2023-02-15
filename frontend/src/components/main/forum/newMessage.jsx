@@ -6,6 +6,7 @@ import { TemplateButton } from "../../templates/button";
 import s from "../../styles/forum/inputForm.module.css";
 
 export const NewMessageForm = () => {
+  const hiddenElem = document.querySelector('#hidden')
   const [text, setText] = useState("");
   const dispatch = useDispatch();
 
@@ -13,7 +14,6 @@ export const NewMessageForm = () => {
     if (text.trim().length) {
       dispatch(addMessage({ text }));
       setText("");
-      let hiddenElem = document.getElementById('hidden')
       hiddenElem.scrollIntoView()
     }
   };

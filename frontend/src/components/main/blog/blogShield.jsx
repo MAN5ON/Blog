@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import s from "../../styles/blog/blog.module.css";
 
-export const BlogShield = ({id, author, title, introText, introIMG, tags, creationDate, likes, views,}) => {
+export const BlogShield = ({id, author, title, introText, introIMG, creationDate, likes, views,}) => {
   return (
     <div className={s.itemBlog}>
       <Link to={`/posts/${id}`}>
@@ -15,9 +15,6 @@ export const BlogShield = ({id, author, title, introText, introIMG, tags, creati
         alt=""
       ></img>
       <div className={s.blogDescription}>{introText}</div>
-      <div className={s.blogTags}>
-        {tags.map(tag => <div className={s.blogTagItem}>#{tag}</div>)}
-      </div>
       <div className={s.footerBlog}>
         <div className={s.blogDate}>{creationDate}</div>
         <div className={s.blogLikes}>{likes} likes</div>

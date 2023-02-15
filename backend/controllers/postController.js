@@ -52,7 +52,6 @@ export const newPost = async (req, res) => {
             introText: req.body.introText,
             introIMG: req.body.introIMG,
             postArr: req.body.postArr,
-            tags: req.body.tags,
             author: req.userID,
             viewsCount: req.body.viewsCount,
             likesCount: req.body.likesCount,
@@ -79,7 +78,6 @@ export const updatePost = async (req, res) => {
             intro: req.body.intro,
             introIMG: req.body.introIMG,
             postArr: req.body.text,
-            tags: req.body.tags,
             // Комментарий выглядит как массив объектов с default = []
             // Значит при работе с комментариями нам не нужно создавать/удалять массив,
             // а изменять массив комментариев внутри модели поста...

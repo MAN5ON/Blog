@@ -13,10 +13,6 @@ const blogSlice = createSlice({
             items: [],
             status: 'loading'
         },
-        tags: {
-            items: [],
-            status: 'loading'
-        },
         comments: {
             items: [],
             status: 'loading'

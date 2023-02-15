@@ -11,10 +11,10 @@ export const Forum = () => {
   return (
     <main className={s.forumPage}>
       <div className={s.messageHistory}>
-      {forum.slice(0).map((message) => (
-        <MessageItem key={message.id} {...message} />
-      ))}
-      <div id='hidden'></div>
+        {forum.slice(0).map((message) => (
+          <MessageItem key={message.id} {...message} />
+        ))}
+        <div id="hidden"></div>
       </div>
       <NewMessageForm />
     </main>

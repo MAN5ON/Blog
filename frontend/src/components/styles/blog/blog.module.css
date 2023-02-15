@@ -44,27 +44,6 @@
   border-radius: 15px;
 }
 
-.blogTags {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-
-  font-weight: bold;
-}
-
-.blogTagItem {
-  padding: 5px;
-  margin: 5px;
-  border-radius: 5px;
-
-  background-color: var(--window-bg);
-  cursor: pointer;
-}
-
-.blogTagItem:hover {
-  text-decoration: underline;
-}
-
 .footerBlog {
   display: flex;
   flex-direction: row;

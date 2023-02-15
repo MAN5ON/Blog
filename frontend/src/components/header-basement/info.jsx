@@ -15,7 +15,6 @@ export const Info = () => {
         <li>Redux (Toolkit)</li>
         <li>React Router Dom</li>
         <li>Axios</li>
-        <li>SASS</li>
       </ul>
       <br />
       Backend:

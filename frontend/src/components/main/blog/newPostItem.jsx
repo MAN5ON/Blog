@@ -12,9 +12,6 @@ export const NewPostItem = () => {
         <TemplateButton text="ADD TEXT" />
         <TemplateButton text="ADD IMAGE" />
       </div>
-      <div className={s.tags}>
-        <input placeholder="add-tags" maxLength="20"></input>
-      </div>
       <TemplateButton text="PUBLISH" />
     </div>
   );

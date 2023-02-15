@@ -1,6 +1,6 @@
 .messageHistory {
   margin: 5px 0;
-  height: 33vw;
+  height: 31vw;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
@@ -28,7 +28,7 @@
   background-color: var(--component-bg);
 }
 
-.chatMessage:last-child{
+.chatMessage:last-child {
   background-color: green;
 }
 
@@ -41,12 +41,12 @@
 }
 
 .message {
-  display: block;
+  display: inline;  
   width: 100%;
   align-self: flex-start;
   margin: 0 5px 5px 5px;
 
-  white-space: pre;
+  white-space: break-spaces;
   word-wrap: break-word;
   font-size: 16px;
   color: var(--message-color);
