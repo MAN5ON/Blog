@@ -1,8 +1,17 @@
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout, selectIsAuth } from "../redux/authSlice";
 import s from "./../styles/header.module.css";
 
 export const Header = () => {
-  const isAuth = false
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+  const onClickLogout = () => {
+    if (window.confirm("Are you sure you want to logout?")) {
+      dispatch(logout());
+    }
+  };
+  
   return (
     <header className={s.header}>
       <div className={s.navBar}>
@@ -20,13 +29,15 @@ export const Header = () => {
       {isAuth ? (
         <div className={s.headerIsAuth}>
           <Link to="/post-editor">
-            <button>New post</button>
+            <button className={s.newPost}>New post</button>
           </Link>
-          <button>Log out</button>
+          <button onClick={onClickLogout} className={s.logout}>
+            Log out
+          </button>
         </div>
       ) : (
         <Link to="/log-in" className={s.loginButton}>
-          <button>Auth</button>
+          <button className={s.login}>Auth</button>
         </Link>
       )}
     </header>

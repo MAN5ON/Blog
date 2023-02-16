@@ -40,8 +40,8 @@ app.get('/posts/:id', getOnePost)
 app.get('/posts', getAllPosts)
 
 //post req-res
-app.post('/auth/sign-up', registerValidation, handleValidationsErrors, signup)
-app.post('/auth/log-in', loginValidation,handleValidationsErrors, login)
+app.post('/sign-up', registerValidation, handleValidationsErrors, signup)
+app.post('/log-in', loginValidation,handleValidationsErrors, login)
 app.post('/forum', checkAuth, MessageValidation, handleValidationsErrors, createMessage)
 app.post('/new', checkAuth, PostValidation, handleValidationsErrors, newPost)
 //upload image

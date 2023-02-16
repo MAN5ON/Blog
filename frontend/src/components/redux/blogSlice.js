@@ -18,23 +18,23 @@ const blogSlice = createSlice({
             status: 'loading'
         },
     },
-    reducers: {
-        addPost(state, action) { },
+    // reducers: {
+    //     addPost(state, action) { },
 
-        updatePost(state, action) { },
+    //     updatePost(state, action) { },
 
-        deletePost(state, action) { },
+    //     deletePost(state, action) { },
 
-        likePost(state, action) { },
+    //     likePost(state, action) { },
 
-        addComment(state, action) { },
+    //     addComment(state, action) { },
 
-        updateComment(state, action) { },
+    //     updateComment(state, action) { },
 
-        deleteComment(state, action) { },
+    //     deleteComment(state, action) { },
 
-        likeComment(state, action) { },
-    },
+    //     likeComment(state, action) { },
+    // },
     extraReducers: {
         [fetchPosts.pending]: (state) => {
             state.posts.items = []
