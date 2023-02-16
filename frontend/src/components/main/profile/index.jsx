@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import s from "../../styles/profile/profile.module.css";
+
 import { EditPage } from "./editPage";
 import { UserPage } from "./userPage";
+
+import s from "../../styles/profile/profile.module.css";
 
 export const Profile = () => {
   const [editPage, showEditPage] = useState(false);

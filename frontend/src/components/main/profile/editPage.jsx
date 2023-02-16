@@ -1,5 +1,6 @@
-import s from "../../styles/profile/profile.module.css";
 import { TemplateButton } from "../../templates/button";
+
+import s from "../../styles/profile/profile.module.css";
 
 export const EditPage = ({ pageText, changePageText, showEditPage }) => {
   return (

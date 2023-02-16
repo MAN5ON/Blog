@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+
 import { TemplateButton } from "../templates/button";
+import { fetchLogin, selectIsAuth } from "../redux/authSlice";
+
 import s from "../styles/auth/auth.module.css";
-import { fetchAuth, selectIsAuth } from "../redux/authSlice";
 
 export const LogIn = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -21,8 +23,16 @@ export const LogIn = () => {
     mode: "onChange",
   });
 
-  const onSubmit = (values) => {
-    dispatch(fetchAuth(values));
+  const onSubmit = async (values) => {
+    const data = await dispatch(fetchLogin(values));
+
+    if (!data.payload) {
+      alert("Error: failed to login");
+    }
+
+    if ("token" in data.payload) {
+      window.localStorage.setItem("token", data.payload.token);
+    }
   };
 
   if (isAuth) {
@@ -48,7 +58,7 @@ export const LogIn = () => {
           />
           <div className={s.helpText}>{errors.password?.message}</div>
         </div>
-        <TemplateButton text="LOG IN" type="submit" />
+        <TemplateButton text="LOG IN" type="submit" disabled={!isValid}/>
       </form>
       <Link to="/sign-up">
         <button className={s.SecondButton}>Sign Up</button>

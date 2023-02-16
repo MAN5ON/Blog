@@ -2,10 +2,11 @@ import axios from "../../../axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import s from "../../../styles/blog/blogItem.module.css";
 import { IsLoading } from "../../../templates/isLoading";
 import { CommentItem } from "./commentItem";
 import { InputComment } from "./newComment";
+
+import s from "../../../styles/blog/blogItem.module.css";
 
 export const BlogItem = () => {
   const [data, setData] = useState();

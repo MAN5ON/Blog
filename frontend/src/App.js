@@ -1,3 +1,6 @@
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchAuthMe } from "./components/redux/authSlice";
 import { Routes, Route } from "react-router-dom";
 
 import './App.css';
@@ -11,9 +14,14 @@ import { LogIn } from "./components/auth/logIn";
 import { SignUp } from "./components/auth/signUp";
 import { BlogItem } from "./components/main/blog/blogInside/blogItem";
 import { Info } from "./components/header-basement/info";
-//import { Basement } from './components/header-basement/basement';
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchAuthMe())
+  }, [])
+
   return (
     <div className="App">
       <Header />
@@ -29,7 +37,6 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </div>
-      {/* <Basement /> */}
     </div>
   );
 }

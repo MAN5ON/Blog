@@ -5,7 +5,7 @@
 
 ---
 
-Текущий **FRONTEND**: **`HTML`** **`CSS`** **`JS`** **`React`** **`React-Router-Dom`** **`Redux-Toolkit`** **`Axios`** 
+Текущий **FRONTEND**: **`HTML`** **`CSS`** **`JS`** **`React`** **`React-Router-Dom`** **`React Hook Form`** **`Redux-Toolkit`** **`Axios`** 
 
 Текущий **BACKEND**: **`Express`** **`Mongo DB`** **`Express validator`** **`JWT`** **`BCrypt`** **`Multer`**
 

@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+
 import { TemplateButton } from "../../templates/button";
 import { selectIsAuth } from "../../redux/authSlice";
-import s from "../../styles/blog/newPost.module.css";
 
+import s from "../../styles/blog/newPost.module.css";
 
 export const NewPostItem = () => {
   const isAuth = useSelector(selectIsAuth);

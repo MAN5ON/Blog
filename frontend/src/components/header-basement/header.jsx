@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { logout, selectIsAuth } from "../redux/authSlice";
+
 import s from "./../styles/header.module.css";
 
 export const Header = () => {
@@ -9,6 +11,7 @@ export const Header = () => {
   const onClickLogout = () => {
     if (window.confirm("Are you sure you want to logout?")) {
       dispatch(logout());
+      window.localStorage.removeItem('token')
     }
   };
   

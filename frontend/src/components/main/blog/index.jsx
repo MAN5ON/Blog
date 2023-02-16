@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 
 import { BlogShield } from "./blogShield";
-import s from "../../styles/blog/blog.module.css";
-import { fetchPosts, fetchTags } from "../../redux/blogSlice";
+import { fetchPosts } from "../../redux/blogSlice";
 import { IsLoading } from "../../templates/isLoading";
+
+import s from "../../styles/blog/blog.module.css";
 
 export const Blog = () => {
   const dispatch = useDispatch()
