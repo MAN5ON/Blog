@@ -14,6 +14,7 @@ export const Info = () => {
         <li>React</li>
         <li>Redux (Toolkit)</li>
         <li>React Router Dom</li>
+        <li>React Hook Form</li>
         <li>Axios</li>
       </ul>
       <br />

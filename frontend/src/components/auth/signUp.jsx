@@ -6,12 +6,18 @@ export const SignUp = ({ showLogin }) => {
   return (
     <div className={s.authPage}>
       <div className={s.inputs}>
-        <input placeholder="Email" />
+        <input type="email" placeholder="Email" />
+        <div className={s.helpText}></div>
         <input placeholder="Login" />
+        <div className={s.helpText}></div>
         <input placeholder="Name" />
+        <div className={s.helpText}></div>
         <input placeholder="Surname" />
+        <div className={s.helpText}></div>
         <input type="password" placeholder="Password" />
+        <div className={s.helpText}></div>
         <input type="password" placeholder="Confirm Password" />
+        <div className={s.helpText}></div>
       </div>
       <TemplateButton text="SIGN UP" />
       <Link to="/log-in">

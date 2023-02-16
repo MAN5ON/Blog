@@ -37,17 +37,23 @@ a {
 
   font-size: 14px;
   color: var(--component-bg);
-  background-color: rgb(250, 250, 250);
 
   cursor: pointer;
   border: none;
-  
+
   border-radius: 5px;
   box-shadow: var(--window-bg);
 }
 
-.header button:active {
-  background-color: rgb(150, 150, 150);
+.login {
+  background-color: var(--main-text-color);
+}
+.logout {
+  background-color: brown;
+}
+
+.newPost {
+  background-color: var(--main-text-color);
 }
 
 .headerIsAuth {
