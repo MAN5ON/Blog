@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { addMessage } from "../../redux/forumSlice";
 import { TemplateButton } from "../../templates/button";
+
 import s from "../../styles/forum/inputForm.module.css";
 
 export const NewMessageForm = () => {

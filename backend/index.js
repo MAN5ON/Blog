@@ -38,6 +38,7 @@ app.get('/forum', getAllMessages)
 app.get('/profile/:id', checkAuth, openProfile)
 app.get('/posts/:id', getOnePost)
 app.get('/posts', getAllPosts)
+app.get('/me', checkAuth, openProfile)
 
 //post req-res
 app.post('/sign-up', registerValidation, handleValidationsErrors, signup)
