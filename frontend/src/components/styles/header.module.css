@@ -18,21 +18,12 @@ a {
   text-decoration: none;
 }
 
-.navBar {
-  display: flex;
-  flex-direction: row;
-}
-
-.navBar a:hover {
-  font-weight: bold;
-}
-
 .loginButton:hover {
   text-decoration: underline;
 }
 
 .header button {
-  padding: 10px 20px;
+  height: 40px;
   margin: 5px;
 
   font-size: 14px;
@@ -41,22 +32,37 @@ a {
   cursor: pointer;
   border: none;
 
-  border-radius: 5px;
+  
   box-shadow: var(--window-bg);
 }
 
 .login {
+  padding: 10px 20px;
   background-color: var(--main-text-color);
+  border-radius: 5px;
 }
 .logout {
+  padding: 10px 20px;
   background-color: brown;
+  border-radius: 5px;
 }
 
 .newPost {
+  padding: 10px 20px;
   background-color: var(--main-text-color);
+  border-radius: 5px;
+}
+
+.profile {
+  width: 40px;
+  text-align: center;
+  margin: auto;
+  background-color: var(--window-bg);
+  border-radius: 100px;
 }
 
 .headerIsAuth {
+  display: flex;
   align-self: center;
   align-content: flex-end;
 }

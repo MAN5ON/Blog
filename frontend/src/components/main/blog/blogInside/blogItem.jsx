@@ -1,14 +1,17 @@
 import axios from "../../../axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { IsLoading } from "../../../templates/isLoading";
 import { CommentItem } from "./commentItem";
 import { InputComment } from "./newComment";
+import { TemplateButton } from "../../../templates/button";
 
 import s from "../../../styles/blog/blogItem.module.css";
 
 export const BlogItem = () => {
+  const userData = useSelector((state) => state.auth.data);
   const [data, setData] = useState();
   const [isLoading, setLoading] = useState(true);
   const { id } = useParams();
@@ -31,7 +34,7 @@ export const BlogItem = () => {
   ) : (
     <div className={s.blogPage}>
       <div className={s.blogItem}>
-      <div className={s.info}>
+        <div className={s.info}>
           <div className={s.creationDate}>
             {new Date(data.createdAt).toLocaleString("en", {
               year: "numeric",
@@ -61,8 +64,18 @@ export const BlogItem = () => {
           )}
         </div>
         <div className={s.blogFooter}>
-          <span className={s.views}>{data.viewsCount} views 👀</span> 
-          <span className={s.likes}>{data.likesCount} likes ❤️</span>
+          {userData?._id === data.author ? (
+            <div className={s.withProperty}>
+              <TemplateButton text="Delete" />
+              <TemplateButton text="Edit" />
+            </div>
+          ) : (
+            <div className={s.withProperty}></div>
+          )}
+          <div className={s.statistic}>
+            <span className={s.views}>{data.viewsCount} views 👀</span>
+            <span className={s.likes}>{data.likesCount} likes ❤️</span>
+          </div>
         </div>
       </div>
       {/* {data.comments.map((comment) => (
