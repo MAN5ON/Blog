@@ -11,26 +11,21 @@ export const Header = () => {
   const onClickLogout = () => {
     if (window.confirm("Are you sure you want to logout?")) {
       dispatch(logout());
-      window.localStorage.removeItem('token')
+      window.localStorage.removeItem("token");
     }
   };
-  
+
   return (
     <header className={s.header}>
-      <div className={s.navBar}>
-        <Link to="/posts" className={s.header}>
-          <h2>Welcome</h2>
-        </Link>
-        <Link to="/forum" className={s.header}>
-          Forum
-        </Link>
-        <Link to="/profile" className={s.header}>
-          Profile
-        </Link>
-      </div>
+      <Link to="/posts" className={s.header}>
+        <h2>Welcome</h2>
+      </Link>
 
       {isAuth ? (
         <div className={s.headerIsAuth}>
+          <Link to="/profile" className={s.header}>
+            <button className={s.profile}>👤</button>
+          </Link>
           <Link to="/post-editor">
             <button className={s.newPost}>New post</button>
           </Link>
