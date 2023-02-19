@@ -43,10 +43,15 @@
   color: brown;
 }
 
-.SecondButton {
+.mainButton button {
+  font-size: 20px;
+  font-weight: bold;
+}
+.secondButton {
   margin: 25px 0 25px;
+}
+.secondButton button {
   padding: 10px 25px 10px 25px;
-  border-radius: 15px;
 
   font-size: 16px;
   color: var(--component-bg);
@@ -57,7 +62,7 @@
   border: none;
 }
 
-.SecondButton:active {
+.secondButton button:active {
   color: var(--component-bg);
   background-color: rgb(200, 200, 200);
 

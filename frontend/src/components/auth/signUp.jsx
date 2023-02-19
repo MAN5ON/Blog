@@ -14,7 +14,6 @@ export const SignUp = ({ showLogin }) => {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
@@ -134,10 +133,12 @@ export const SignUp = ({ showLogin }) => {
           />
           <div className={s.helpText}>{errors.password?.message}</div>
         </div>
-        <TemplateButton text="SIGN UP" type="submit" disabled={!isValid} />
+        <div className={s.mainButton}>
+          <TemplateButton text="SIGN UP" type="submit" disabled={!isValid} />
+        </div>
       </form>
-      <Link to="/log-in">
-        <button className={s.SecondButton}>Log In</button>
+      <Link to="/log-in" className={s.secondButton}>
+        <TemplateButton text="Log in" />
       </Link>
     </div>
   );

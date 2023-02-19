@@ -72,10 +72,12 @@ export const LogIn = () => {
           />
           <div className={s.helpText}>{errors.password?.message}</div>
         </div>
-        <TemplateButton text="LOG IN" type="submit" disabled={!isValid} />
+        <div className={s.mainButton}>
+          <TemplateButton text="LOG IN" type="submit" disabled={!isValid} />
+        </div>
       </form>
-      <Link to="/sign-up">
-        <button className={s.SecondButton}>Sign Up</button>
+      <Link to="/sign-up" className={s.secondButton}>
+        <TemplateButton text="Sign up" />
       </Link>
     </div>
   );
