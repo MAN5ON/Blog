@@ -1,9 +1,8 @@
 .buttonTemp {
   padding: 10px 25px 10px 25px;
-  border-radius: 15px;
+  border-radius: 5px;
 
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
   color: var(--component-bg);
   background-color: var(--main-text-color);
   box-shadow: 3px 3px 3px black;
