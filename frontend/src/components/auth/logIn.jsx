@@ -13,7 +13,6 @@ export const LogIn = () => {
   const {
     register,
     handleSubmit,
-    setError,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
@@ -46,7 +45,14 @@ export const LogIn = () => {
           <input
             type="email"
             placeholder="Email"
-            {...register("email", { required: "please enter your email" })}
+            {...register("email", {
+              required: "please enter your email",
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: "email validation error",
+              },
+            })}
           />
           <div className={s.helpText}>{errors.email?.message}</div>
           <input
@@ -54,11 +60,19 @@ export const LogIn = () => {
             placeholder="Password"
             {...register("password", {
               required: "please enter your password",
+              minLength: {
+                value: 5,
+                message: "minimum password length is 5",
+              },
+              maxLength: {
+                value: 25,
+                message: "maximum password length is 25",
+              },
             })}
           />
           <div className={s.helpText}>{errors.password?.message}</div>
         </div>
-        <TemplateButton text="LOG IN" type="submit" disabled={!isValid}/>
+        <TemplateButton text="LOG IN" type="submit" disabled={!isValid} />
       </form>
       <Link to="/sign-up">
         <button className={s.SecondButton}>Sign Up</button>

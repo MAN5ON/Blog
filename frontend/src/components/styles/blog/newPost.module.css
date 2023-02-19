@@ -38,3 +38,15 @@
 .addButtons button {
   margin: 0 5px;
 }
+
+.publish {
+  margin: 20px auto;
+}
+
+.publish button {
+  padding: 10px 20px;
+
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: aquamarine;
+}

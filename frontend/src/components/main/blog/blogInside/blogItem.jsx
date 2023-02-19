@@ -70,11 +70,13 @@ export const BlogItem = () => {
               <TemplateButton text="Edit" />
             </div>
           ) : (
-            <div className={s.withProperty}></div>
+            <div className={s.withProperty}>
+              <TemplateButton text="Commend"/>
+            </div>
           )}
           <div className={s.statistic}>
-            <span className={s.views}>{data.viewsCount} views 👀</span>
-            <span className={s.likes}>{data.likesCount} likes ❤️</span>
+            <span className={s.views}>{data.viewsCount} views |</span>
+            <span className={s.likes}> {data.likesCount} likes</span>
           </div>
         </div>
       </div>

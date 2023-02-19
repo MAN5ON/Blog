@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { logout, selectIsAuth } from "../redux/authSlice";
+import { TemplateButton } from "../templates/button";
 
 import s from "./../styles/header.module.css";
 
@@ -23,19 +24,23 @@ export const Header = () => {
 
       {isAuth ? (
         <div className={s.headerIsAuth}>
-          <Link to="/profile" className={s.header}>
+          <Link to="/profile">
             <button className={s.profile}>👤</button>
           </Link>
           <Link to="/post-editor">
-            <button className={s.newPost}>New post</button>
+            <TemplateButton text="New Post" />
           </Link>
-          <button onClick={onClickLogout} className={s.logout}>
-            Log out
-          </button>
+          <div className={s.logout}>
+            <TemplateButton
+              click={onClickLogout}
+              text="Logout"
+              className={s.logout}
+            />
+          </div>
         </div>
       ) : (
-        <Link to="/log-in" className={s.loginButton}>
-          <button className={s.login}>Auth</button>
+        <Link to="/log-in">
+          <TemplateButton text="Auth" />
         </Link>
       )}
     </header>
