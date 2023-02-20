@@ -19,7 +19,7 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <Link to="/posts" className={s.header}>
-        <h2>Welcome</h2>
+        <h1>Welcome</h1>
       </Link>
 
       {isAuth ? (

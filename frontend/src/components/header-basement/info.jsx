@@ -35,10 +35,10 @@ export const Info = () => {
               bikmukhamedov.renat@gmail.com
             </p>
           </a>
-          <div>
-            +7(906)403-07-75 <br />
-            Ренат
-          </div>
+          <a className={s.link} href="https://t.me/M4N50N">
+            <p>Telegram</p>
+          </a>
+          <p>+7(906)403-07-75 - Ренат</p>
         </div>
         <div className={s.social}>
           <p>Links:</p>
