@@ -8,6 +8,7 @@
 ---
 
 Реализован следующий функционал
+
 Текущий **BACKEND**: 
 - Создан **[CRUD](https://ru.wikipedia.org/wiki/CRUD)** **[`Express`](https://expressjs.com/)** Сервер;
 - К нему подключен бесплатный кластер **[`Mongo DB`](https://www.mongodb.com/)** через **[`Mongoose`](https://mongoosejs.com/)**;
@@ -27,4 +28,8 @@
 
 ---
 
-Ссылка на автора - **[`*ТЫК*`](https://vk.com/renais5ance)**
+**`VK`** автора - **[`*ТЫК*`](https://vk.com/renais5ance)**
+
+**`Telegram`** автора - **[`*ТЫК*`](https://t.me/M4N50N)**
+
+**`GMAIL`** автора - **[`*ТЫК*`](mailto:bikmukhamedov.renat@gmail.com)**

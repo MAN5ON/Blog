@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 
-.header h2,
+.header h1,
 a {
   align-self: center;
 
@@ -30,6 +30,7 @@ a {
 }
 
 .logout button {
+  color: var(--main-text-color);
   background-color: brown;
 }
 
