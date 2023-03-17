@@ -1,8 +1,8 @@
-import axios from "../../../axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import axios from "../../../axios";
 import { IsLoading } from "../../../templates/isLoading";
 import { CommentItem } from "./commentItem";
 import { InputComment } from "./newComment";

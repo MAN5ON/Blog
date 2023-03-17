@@ -1,17 +1,25 @@
+import React, {useState} from "react"
+
 import { TemplateButton } from "../../templates/button";
 
 import s from "../../styles/profile/profile.module.css";
 
-export const EditPage = ({ pageText, changePageText, showEditPage }) => {
+export const EditPage = ({ showEditPage, data }) => {
+  const [userInfo, changeUserInfo] = useState("");
+  const handlerSave = () => {
+    showEditPage(false)
+
+  }
+
   return (
-    <div className={s.editPage}>
+    <form className={s.editPage}>
       <textarea
         className={s.userInfo}
         maxLength="150"
-        value={pageText}
-        onChange={(e) => changePageText(e.target.value)}
+        value={userInfo}
+        onChange={(e) => changeUserInfo(e.target.value)}
       />
       <TemplateButton text="SAVE" click={() => showEditPage(false)}/>
-    </div>
+    </form>
   );
 };
