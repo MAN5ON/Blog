@@ -58,7 +58,7 @@ app.delete('/profile/:id', checkAuth, deleteProfile)
 app.delete('/posts/:id', checkAuth, deletePost)
 
 
-app.listen(666, (error) => {
+app.listen(3666, (error) => {
     if (error) {
         return console.log(error)
     }
