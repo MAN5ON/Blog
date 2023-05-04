@@ -1,0 +1,78 @@
+@import "../index.scss";
+
+@keyframes changeBackgroundColor {
+	from {
+		background-color: rgb(60, 60, 60);
+	}
+	to {
+		background-color: rgb(20, 20, 20);
+	}
+}
+
+@keyframes changeContentSpinner {
+	10% {
+		content: "⠙";
+	}
+	20% {
+		content: "⠹";
+	}
+	30% {
+		content: "⠸";
+	}
+	40% {
+		content: "⠼";
+	}
+	50% {
+		content: "⠴";
+	}
+	60% {
+		content: "⠦";
+	}
+	70% {
+		content: "⠧";
+	}
+	80% {
+		content: "⠇";
+	}
+	90% {
+		content: "⠏";
+	}
+}
+
+.isLoading {
+	position: absolute;
+	top: 25%;
+	width: 200px;
+	margin: 15px auto;
+	padding: 25px;
+
+	text-align: center;
+	border-radius: 5px;
+	color: $first-theme;
+	background-color: $component-bg;
+}
+
+.isLoading {
+	animation: changeBackgroundColor 1s infinite alternate;
+}
+
+.header {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.spinnerLoading {
+	color: var(--main-text-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+}
+
+.spinnerLoading:after {
+	animation: changeContentSpinner 0.8s linear infinite;
+	display: block;
+	content: "⠋";
+	font-size: 40px;
+}

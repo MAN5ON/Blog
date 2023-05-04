@@ -1,0 +1,119 @@
+@font-face {
+	font-family: "Anonymous Pro", monospace;
+	font-weight: 400;
+	font-style: normal;
+	src: url("../../assets/fonts/anonymousPro/AnonymousPro-Regular.ttf");
+}
+@font-face {
+	font-family: "Anonymous Pro", monospace;
+	font-weight: 400;
+	font-style: italic;
+	src: url("../../assets/fonts/anonymousPro/AnonymousPro-Italic.ttf");
+}
+
+@font-face {
+	font-family: "Anonymous Pro", monospace;
+	font-style: normal;
+	font-weight: 700;
+	src: url("../../assets/fonts/anonymousPro/AnonymousPro-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Anonymous Pro", monospace;
+	font-weight: 700;
+	font-style: italic;
+	src: url("../../assets/fonts/anonymousPro/AnonymousPro-BoldItalic.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	src: url("../../assets/fonts/openSans/OpenSans-Light.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	src: url("../../assets/fonts/openSans/OpenSans-LightItalic.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	src: url("../../assets/fonts/openSans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	src: url("../../assets/fonts/openSans/OpenSans-Italic.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	src: url("../../assets/fonts/openSans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	src: url("../../assets/fonts/openSans/OpenSans-BoldItalic.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 800;
+	font-style: normal;
+	src: url("../../assets/fonts/openSans/OpenSans-ExtraBold.ttf");
+}
+
+@font-face {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 800;
+	font-style: italic;
+	src: url("../../assets/fonts/openSans/OpenSans-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+	font-family: "Flow Circular", cursive;
+	src: url("../../assets/fonts/flowCircular/FlowCircular-Regular.ttf");
+}
+
+//colors
+$component-bg: rgb(20, 20, 20);
+$window-bg: rgb(30, 30, 30);
+$first-theme: rgb(0, 255, 0);
+$second-theme: rgb(180, 85, 135);
+$info: rgb(50, 200, 50);
+$button-main-bg: rgb(255, 255, 255);
+$button-active-bg: rgb(150, 150, 150);
+$blog-text-color: rgb(255, 255, 255);
+
+//fonts
+$head-text: "Anonymous Pro", monospace;
+$main-text: "Open Sans", sans-serif;
+$template-text: "Flow Circular", cursive;
+
+body {
+	margin: 0;
+	background-color: white;
+	font-family: $head-text;
+	font-size: 16px;
+	background-color: $window-bg;
+}
+
+body::-webkit-scrollbar {
+	width: 0;
+	background-color: $window-bg;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: $component-bg;
+}
