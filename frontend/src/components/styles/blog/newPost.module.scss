@@ -1,0 +1,95 @@
+.newPost {
+	display: flex;
+	flex-direction: column;
+	margin: 10px auto;
+	width: 75%;
+}
+
+.newPost input,
+.newPost textarea,
+.text textarea,
+.image input {
+	width: 100%;
+	margin: 5px 0 5px 0;
+	padding: 10px 0px 10px 10px;
+
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	background-color: var(--component-bg);
+	color: var(--main-text-color);
+
+	border-radius: 5px;
+	border: none;
+	resize: none;
+	outline: none;
+}
+
+.newPost textarea {
+	height: 250px;
+}
+
+.text,
+.image {
+	position: relative;
+	text-align: end;
+	align-items: center;
+}
+
+.image {
+	display: flex;
+	margin: 5px;
+	width: 100%;
+}
+
+.image input {
+	width: 95%;
+}
+
+.text button,
+.image button {
+	display: none;
+}
+
+.text:hover button,
+.image:hover button {
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	top: 3%;
+	height: 2.5vw;
+	width: 2.5vw;
+	color: var(--main-text-color);
+	background-color: brown;
+}
+.newPost button {
+	margin: 5px auto;
+	padding: 5px 10px;
+}
+
+.addButtons {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+.addButtons button {
+	margin: 0 5px;
+}
+
+.helper {
+	margin: 5px auto;
+	text-align: center;
+	color: brown;
+}
+
+.publish {
+	margin: 20px auto;
+}
+
+.publish button {
+	padding: 10px 20px;
+
+	font-size: 20px;
+	font-weight: bolder;
+	background-color: aquamarine;
+}
