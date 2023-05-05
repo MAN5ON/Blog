@@ -1,7 +1,7 @@
 import React from "react";
 import s from "../styles/templates/buttonTemp.module.scss";
 
-export const TemplateButton = ({ type, disabled, text, click, className }) => {
+export const TemplateButton = ({ type, disabled, text, click }) => {
 	return (
 		<button
 			className={s.buttonTemp}

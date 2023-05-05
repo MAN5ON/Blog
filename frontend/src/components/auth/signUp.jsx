@@ -43,9 +43,9 @@ export const SignUp = ({ showLogin }) => {
 	}
 
 	return (
-		<div className={s.authPage}>
+		<main className={s.authPage}>
 			<form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-				<div className={s.inputs}>
+				<article className={s.inputs}>
 					<input
 						type="email"
 						placeholder="Email"
@@ -57,7 +57,9 @@ export const SignUp = ({ showLogin }) => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.email?.message}</div>
+					<footer className={s.helpText}>
+						{errors.email?.message}
+					</footer>
 					<input
 						placeholder="Login"
 						{...register("login", {
@@ -65,7 +67,7 @@ export const SignUp = ({ showLogin }) => {
 							pattern: {
 								value: /^[a-zA-Z0-9]+$/,
 								message:
-									"login can only contain letters and numbers",
+									"login can only contain  english letters and numbers",
 							},
 							minLength: {
 								value: 5,
@@ -77,14 +79,16 @@ export const SignUp = ({ showLogin }) => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.login?.message}</div>
+					<footer className={s.helpText}>
+						{errors.login?.message}
+					</footer>
 					<input
 						placeholder="Name"
 						{...register("name", {
 							required: "please enter your name",
 							pattern: {
 								value: /^[A-Za-z]+$/i,
-								message: "you can use only letters",
+								message: "you can use only english letters",
 							},
 							minLength: {
 								value: 2,
@@ -96,14 +100,16 @@ export const SignUp = ({ showLogin }) => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.name?.message}</div>
+					<footer className={s.helpText}>
+						{errors.name?.message}
+					</footer>
 					<input
 						placeholder="Surname"
 						{...register("surname", {
 							required: "please enter your surname",
 							pattern: {
 								value: /^[A-Za-z]+$/i,
-								message: "you can use only letters",
+								message: "you can use only english  letters",
 							},
 							minLength: {
 								value: 2,
@@ -115,7 +121,9 @@ export const SignUp = ({ showLogin }) => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.surname?.message}</div>
+					<footer className={s.helpText}>
+						{errors.surname?.message}
+					</footer>
 					<input
 						type="password"
 						placeholder="Password"
@@ -131,19 +139,23 @@ export const SignUp = ({ showLogin }) => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.password?.message}</div>
-				</div>
-				<div className={s.mainButton}>
-					<TemplateButton
-						text="SIGN UP"
-						type="submit"
-						disabled={!isValid}
-					/>
-				</div>
+					<footer className={s.helpText}>
+						{errors.password?.message}
+					</footer>
+				</article>
+				<article className={s.buttons}>
+					<div className={s.mainButton}>
+						<TemplateButton
+							text="SIGN UP"
+							type="submit"
+							disabled={!isValid}
+						/>
+					</div>
+					<Link to="/log-in" className={s.secondButton}>
+						Log in
+					</Link>
+				</article>
 			</form>
-			<Link to="/log-in" className={s.secondButton}>
-				<TemplateButton text="Log in" />
-			</Link>
-		</div>
+		</main>
 	);
 };

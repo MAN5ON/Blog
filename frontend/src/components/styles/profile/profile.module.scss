@@ -10,15 +10,35 @@
 	padding: 20px 25px 25px 25px;
 
 	color: $blog-text-color;
+	background-color: $component-bg;
+	border-radius: 5px;
 }
 
+.profileHead {
+	display: inherit;
+}
+
+.profilePic {
+	width: 150px;
+	height: 150px;
+	border-radius: 5px;
+	object-fit: cover;
+}
+
+.userInfo {
+	padding-left: 15px;
+	display: inherit;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .userLogin {
-	font-size: 22px;
+	margin: 0;
+	font-size: 36px;
 	font-weight: bold;
 }
 
 .userName {
-	padding-bottom: 15px;
+	margin: 0;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -26,12 +46,19 @@
 .userPage {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	padding-bottom: 15px;
-
+	justify-content: left;
+	padding-bottom: 50px;
 	font-size: 16px;
 }
 
+.shortInfo {
+	font-family: $main-text;
+}
+
+.helper,
+shortInfo {
+	color: $second-theme;
+}
 .shortInfo {
 	white-space: pre;
 	word-wrap: break-word;
@@ -49,7 +76,11 @@
 	padding: 5px;
 	border-radius: 5px;
 
+	font-weight: $main-text;
 	font-size: 16px;
+
+	color: $blog-text-color;
+	background-color: $window-bg;
 
 	resize: none;
 	outline: none;

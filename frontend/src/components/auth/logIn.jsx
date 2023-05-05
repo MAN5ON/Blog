@@ -39,9 +39,9 @@ export const LogIn = () => {
 	}
 
 	return (
-		<div className={s.authPage}>
+		<main className={s.authPage}>
 			<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-				<div className={s.inputs}>
+				<article className={s.inputs}>
 					<input
 						type="email"
 						placeholder="Email"
@@ -53,7 +53,9 @@ export const LogIn = () => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.email?.message}</div>
+					<footer className={s.helpText}>
+						{errors.email?.message}
+					</footer>
 					<input
 						type="password"
 						placeholder="Password"
@@ -69,19 +71,24 @@ export const LogIn = () => {
 							},
 						})}
 					/>
-					<div className={s.helpText}>{errors.password?.message}</div>
-				</div>
-				<div className={s.mainButton}>
-					<TemplateButton
-						text="LOG IN"
-						type="submit"
-						disabled={!isValid}
-					/>
-				</div>
+					<footer className={s.helpText}>
+						{errors.password?.message}
+					</footer>
+				</article>
+
+				<article className={s.buttons}>
+					<div className={s.mainButton}>
+						<TemplateButton
+							text="LOG IN"
+							type="submit"
+							disabled={!isValid}
+						/>
+					</div>
+					<Link to="/sign-up" className={s.secondButton}>
+						Sign up
+					</Link>
+				</article>
 			</form>
-			<Link to="/sign-up" className={s.secondButton}>
-				<TemplateButton text="Sign up" />
-			</Link>
-		</div>
+		</main>
 	);
 };
