@@ -19,6 +19,7 @@ export const Info = () => {
 				<div className={s.firstCol}>
 					<ul>
 						Frontend:
+						<li>SASS</li>
 						<li>React</li>
 						<li>Redux (Toolkit)</li>
 						<li>React Router Dom</li>
