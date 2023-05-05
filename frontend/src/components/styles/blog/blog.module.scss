@@ -1,54 +1,5 @@
 .blogPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.newPost button {
-  position: absolute;
-  top: 85px;
-  left: 2%;
-}
-
-.itemBlog {
-  width: 60%;
-  margin: 15px auto;
-  padding: 25px;
-
-  border-radius: 5px;
-  color: var(--main-text-color);
-  background-color: var(--component-bg);
-}
-
-.authorBlog {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.authorBlog:hover {
-  text-decoration: underline;
-}
-
-.nameBlog {
-  padding-bottom: 10px;
-  font-size: 25px;
-  font-weight: bold;
-
-  cursor: pointer;
-}
-
-.blogPic {
-  width: 100%;
-  min-height: 50%;
-  max-height: 100%;
-  border-radius: 15px;
-}
-
-.footerBlog {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-  justify-content: space-around;
-
-  font-weight: lighter;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

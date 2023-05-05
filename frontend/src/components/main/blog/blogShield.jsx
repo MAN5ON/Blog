@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import s from "../../styles/blog/blog.module.scss";
+import s from "../../styles/blog/blogShield.module.scss";
 
 export const BlogShield = ({
 	id,
@@ -14,18 +14,28 @@ export const BlogShield = ({
 	views,
 }) => {
 	return (
-		<div className={s.itemBlog}>
-			<Link to={`/posts/${id}`}>
-				<div className={s.nameBlog}>{title.toUpperCase()}</div>
+		<article className={s.blogShield}>
+			<Link to={`/posts/${id}`} className={s.picContain}>
+				<img className={s.blogPic} src={introIMG} alt="" />
 			</Link>
-			<img className={s.blogPic} src={introIMG} alt=""></img>
-			<div className={s.blogDescription}>{introText}</div>
-			<div className={s.footerBlog}>
-				<div className={s.blogDate}>{creationDate}</div>
-				<div className={s.blogLikes}>{likes} likes</div>
-				<div className={s.blogwiews}>{views} views</div>
-				<div className={s.authorBlog}>{author.toUpperCase()}</div>
-			</div>
-		</div>
+			<article className={s.info}>
+				<header className={s.headerPost}>
+					<p className={s.datePost}>{creationDate}</p>
+					<header className={s.statistic}>
+						<p>{views} views</p>
+						<p> {likes} likes</p>
+					</header>
+				</header>
+				<article className={s.textPost}>
+					<Link to={`/posts/${id}`} className={s.headPost}>
+						{title.toUpperCase()}
+					</Link>
+					<p className={s.descriptionPost}>{introText}</p>
+				</article>
+				<Link to={`/porfile`} className={s.authorPost}>
+					by {author.toUpperCase()}
+				</Link>
+			</article>
+		</article>
 	);
 };
