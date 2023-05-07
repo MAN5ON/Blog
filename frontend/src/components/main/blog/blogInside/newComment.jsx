@@ -8,7 +8,7 @@ export const InputComment = () => {
 	const [comment, setComment] = useState("");
 
 	return (
-		<div className={s.leaveComment}>
+		<article className={s.leaveComment}>
 			<textarea
 				className={s.comment}
 				value={comment}
@@ -18,6 +18,6 @@ export const InputComment = () => {
 				}}
 			/>
 			<TemplateButton text="✍️" />
-		</div>
+		</article>
 	);
 };

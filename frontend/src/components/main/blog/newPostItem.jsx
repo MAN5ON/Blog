@@ -75,7 +75,7 @@ export const NewPostItem = () => {
 
 	console.log(post);
 	return (
-		<div className={s.newPost}>
+		<main className={s.newPost}>
 			<input
 				name="title"
 				placeholder="Title"
@@ -106,9 +106,9 @@ export const NewPostItem = () => {
 			/>
 			{post.postArr.map((item, index) => {
 				return (
-					<div className={s.postContent}>
+					<article className={s.postContent}>
 						{item.itemType === "text" ? (
-							<div key={index} id={index} className={s.text}>
+							<article key={index} id={index} className={s.text}>
 								<TemplateButton
 									text="✖"
 									click={() => RemoveHendler(index)}
@@ -120,9 +120,9 @@ export const NewPostItem = () => {
 										handlePostArrChangeText(index, event)
 									}
 								/>
-							</div>
+							</article>
 						) : item.itemType === "image" ? (
-							<div key={index} className={s.image}>
+							<article key={index} className={s.image}>
 								<input
 									type="file"
 									placeholder="Choose your picture"
@@ -132,30 +132,30 @@ export const NewPostItem = () => {
 									text="✖"
 									click={() => RemoveHendler(index)}
 								/>
-							</div>
+							</article>
 						) : null}
-					</div>
+					</article>
 				);
 			})}
 			{post.postArr.length < 20 ? (
-				<div className={s.addButtons}>
+				<article className={s.addButtons}>
 					<TemplateButton text="Add Text" click={AddTextHendler} />
 					<TemplateButton text="Add Picture" click={AddPicHendler} />
-				</div>
+				</article>
 			) : (
-				<div className={s.helper}>
+				<footer className={s.helper}>
 					maximum number of content blocks is 20
-				</div>
+				</footer>
 			)}
-			<div className={s.publish}>
+			<article className={s.publish}>
 				{post.postArr.length > 0 ? (
 					<TemplateButton text="PUBLISH" disabled={!isValid} />
 				) : (
-					<div className={s.helper}>
+					<footer className={s.helper}>
 						minimum number of content block is 1
-					</div>
+					</footer>
 				)}
-			</div>
-		</div>
+			</article>
+		</main>
 	);
 };

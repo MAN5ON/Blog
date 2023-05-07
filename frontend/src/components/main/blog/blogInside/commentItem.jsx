@@ -4,21 +4,19 @@ import s from "../../../styles/blog/commentItem.module.scss";
 
 export const CommentItem = (comment) => {
 	return (
-		<div className={s.commentItem}>
-			<div className={s.headComment}>
-				<div className={s.username}>{comment.id}</div>
+		<article className={s.commentItem}>
+			<header className={s.headComment}>
+				<p className={s.username}>{comment.id}</p>
 				<button className={s.deleteComment}>❌</button>
-			</div>
-
-			<div className={s.textComment}>{comment.comment}</div>
-
-			<div className={s.basementComment}>
-				<div className={s.dateComment}>{comment.dateComment}</div>
+			</header>
+			<p className={s.textComment}>{comment.comment}</p>
+			<footer className={s.basementComment}>
+				<p className={s.dateComment}>{comment.dateComment}</p>
 				<button className={s.likes}>
 					{comment.likesCount}{" "}
 					{comment.likeStatus === true ? "❤️" : "🖤"}
 				</button>
-			</div>
-		</div>
+			</footer>
+		</article>
 	);
 };

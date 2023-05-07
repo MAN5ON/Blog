@@ -32,10 +32,10 @@ export const BlogItem = () => {
 	return isLoading ? (
 		<IsLoading />
 	) : (
-		<div className={s.blogPage}>
-			<div className={s.blogItem}>
-				<div className={s.info}>
-					<div className={s.creationDate}>
+		<main className={s.blogPage}>
+			<article className={s.blogItem}>
+				<article className={s.info}>
+					<p className={s.creationDate}>
 						{new Date(data.createdAt).toLocaleString("en", {
 							year: "numeric",
 							month: "long",
@@ -44,14 +44,14 @@ export const BlogItem = () => {
 							hour: "numeric",
 							minute: "numeric",
 						})}
-					</div>
-					<div className={s.author}>{data.author}</div>
-				</div>
+					</p>
+					<p className={s.author}>{data.login}</p>
+				</article>
 				<h1 className={s.header}> {data.title.toUpperCase()} </h1>
-				<div className={s.content}>
+				<article className={s.content}>
 					{data.postArr.map((item) =>
 						item.itemType === "text" ? (
-							<div className={s.textItem}>{item.itemContent}</div>
+							<p className={s.textItem}>{item.itemContent}</p>
 						) : item.itemType === "image" ? (
 							<img
 								className={s.imageItem}
@@ -64,46 +64,48 @@ export const BlogItem = () => {
 							</div>
 						)
 					)}
-				</div>
-				<div className={s.blogFooter}>
-					{userData?._id === data.author ? (
-						<div className={s.withProperty}>
+				</article>
+				<footer className={s.blogFooter}>
+					{userData && userData._id === data.author ? (
+						<article className={s.withProperty}>
 							<TemplateButton text="Delete" />
 							<TemplateButton text="Edit" />
-						</div>
+						</article>
+					) : userData ? (
+						<TemplateButton text="Commend" />
 					) : (
-						<div className={s.withProperty}>
-							<TemplateButton text="Commend" />
-						</div>
+						<div></div>
 					)}
-					<div className={s.statistic}>
-						<span className={s.views}>
-							{data.viewsCount} views |
-						</span>
-						<span className={s.likes}>
-							{" "}
-							{data.likesCount} likes
-						</span>
-					</div>
-				</div>
-			</div>
-			{/* {data.comments.map((comment) => (
-        <CommentItem
-          author={comment.author}
-          text={comment.text}
-          dateComment={new Date(comment.createdAt).toLocaleString("en", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour12: "false",
-            hour: "numeric",
-            minute: "numeric",
-          })}
-          likesCount={comment.likesCount}
-        />
-      ))} */}
+					<p className={s.statistic}>
+						{data.viewsCount} views | {data.likesCount} likes
+					</p>
+				</footer>
+			</article>
+			{data.comments &&
+				data.comments.map((comment) => (
+					<CommentItem
+						author={comment.author}
+						text={comment.text}
+						dateComment={new Date(comment.createdAt).toLocaleString(
+							"en",
+							{
+								year: "numeric",
+								month: "long",
+								day: "numeric",
+								hour12: "false",
+								hour: "numeric",
+								minute: "numeric",
+							}
+						)}
+						likesCount={comment.likesCount}
+					/>
+				))}
 
-			<InputComment />
-		</div>
+			{userData ? (
+				<InputComment />
+			) : (
+				<p>Log in to use the functionality of the site</p>
+			)}
+		</main>
 	);
 };

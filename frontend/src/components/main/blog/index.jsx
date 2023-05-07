@@ -13,10 +13,11 @@ export const Blog = () => {
 	const isPostLoading = posts.status === "loading";
 	useEffect(() => {
 		dispatch(fetchPosts());
+		console.log(posts);
 	}, []);
 
 	return (
-		<div className={s.blogPage}>
+		<main className={s.blogPage}>
 			{isPostLoading ? (
 				<IsLoading />
 			) : posts.items == null ? (
@@ -47,6 +48,6 @@ export const Blog = () => {
 					))
 					.reverse()
 			)}
-		</div>
+		</main>
 	);
 };

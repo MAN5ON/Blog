@@ -1,16 +1,18 @@
+@import "../index.scss";
+
 .blogPage {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
 	width: 70%;
 
-	color: var(--main-text-color);
+	color: $blog-text-color;
 }
 
 .blogItem {
 	padding: 0 15px 10px;
 	margin: 15px;
-	background-color: var(--component-bg);
+	background-color: $component-bg;
 	border-radius: 5px;
 }
 

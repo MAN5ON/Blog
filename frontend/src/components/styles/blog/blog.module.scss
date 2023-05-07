@@ -1,5 +1,12 @@
+@import "../index.scss";
+
 .blogPage {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.end {
+	padding-top: 100px;
+	color: $first-theme;
 }
