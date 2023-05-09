@@ -16,12 +16,12 @@ export const getOnePost = (req, res) => {
     try {
         const postID = req.params.id
         PostModel.findOneAndUpdate({
-            _id: postID,
-        }, {
-            $inc: { viewsCount: 1 },
-        }, {
-            returnDocument: 'after',
-        },
+                _id: postID,
+            }, {
+                $inc: {viewsCount: 1},
+            }, {
+                returnDocument: 'after',
+            },
             (error, doc) => {
                 if (error) {
                     console.log(error)

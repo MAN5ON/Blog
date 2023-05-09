@@ -4,11 +4,11 @@ import multer from "multer";
 import cors from "cors"
 
 import checkAuth from "./utils/checkAuth.js";
-import { PostValidation, loginValidation, registerValidation, profileInfoValidation } from "./validations.js";
+import {PostValidation, loginValidation, registerValidation, profileInfoValidation} from "./validations.js";
 
-import { updatePost, deletePost, getAllPosts, getOnePost, newPost } from "./controllers/postController.js";
-import { deleteProfile, login, openProfile, signup, updateProfile } from "./controllers/userController.js";
-import { handleValidationsErrors } from "./utils/handleValidationsErrors.js";
+import {updatePost, deletePost, getAllPosts, getOnePost, newPost} from "./controllers/postController.js";
+import {deleteProfile, login, openProfile, signup, updateProfile} from "./controllers/userController.js";
+import {handleValidationsErrors} from "./utils/handleValidationsErrors.js";
 
 
 mongoose
@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage })
+const upload = multer({storage})
 
 app.use(express.json());
 app.use(cors())
