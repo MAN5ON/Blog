@@ -1,8 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "../axios";
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-    const { data } = await axios.get('/posts')
+    const {data} = await axios.get('/posts')
     return data
 })
 
@@ -51,6 +51,15 @@ const blogSlice = createSlice({
     }
 })
 
-const { actions, reducer } = blogSlice
-export const { addPost, updatePost, deletePost, likePost, addComment, updateComment, deleteComment, likeComment } = actions;
+const {actions, reducer} = blogSlice
+export const {
+    addPost,
+    updatePost,
+    deletePost,
+    likePost,
+    addComment,
+    updateComment,
+    deleteComment,
+    likeComment
+} = actions;
 export const blogReducer = reducer

@@ -23,15 +23,15 @@ export const signup = async (req, res) => {
         const user = await doc.save();
 
         const token = jwt.sign({
-            _id: user._id,
-        }, 'flowers',
+                _id: user._id,
+            }, 'flowers',
             {
                 expiresIn: '30d',
             }
         )
 
-        const { passwordHash, ...userData } = user._doc
-        res.json({ ...userData, token })
+        const {passwordHash, ...userData} = user._doc
+        res.json({...userData, token})
 
     } catch (error) {
         console.log(error)
@@ -43,7 +43,7 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        const user = await UserModel.findOne({ email: req.body.email });
+        const user = await UserModel.findOne({email: req.body.email});
 
         if (!user) {
             return res.status(404).json({
@@ -59,15 +59,15 @@ export const login = async (req, res) => {
         }
 
         const token = jwt.sign({
-            _id: user._id,
-        }, 'flowers',
+                _id: user._id,
+            }, 'flowers',
             {
                 expiresIn: '30d',
             }
         )
 
-        const { passwordHash, ...userData } = user._doc
-        res.json({ ...userData, token })
+        const {passwordHash, ...userData} = user._doc
+        res.json({...userData, token})
 
     } catch (error) {
         console.log(error);
@@ -86,8 +86,8 @@ export const openProfile = async (req, res) => {
                 message: 'Пользователь не найден'
             })
         }
-        const { passwordHash, ...userData } = user._doc
-        res.json({ ...userData })
+        const {passwordHash, ...userData} = user._doc
+        res.json({...userData})
     } catch (error) {
         console.log(error)
         res.status(500).json({

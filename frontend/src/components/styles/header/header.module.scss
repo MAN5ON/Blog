@@ -1,69 +1,70 @@
 @import "../index.scss";
 
 .header {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
-	width: 50%;
-	height: 40px;
-	display: inherit;
-	flex-direction: row;
-	padding-left: 50%;
-	justify-content: space-around;
-	align-items: center;
-	background-color: black;
+  width: 50%;
+  height: 40px;
+  display: inherit;
+  flex-direction: row;
+  padding-left: 50%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
 }
 
 .footer a,
 .nav a {
-	color: $first-theme;
-	text-decoration: none;
-	cursor: pointer;
+  color: $first-theme;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer a:hover,
 .nav a:hover,
 .nav button:hover {
-	color: $second-theme;
+  color: $second-theme;
 }
 
 .nav {
-	height: 90px;
-	display: inherit;
-	justify-content: space-between;
-	padding: 0 10%;
-	align-items: center;
-	background: radial-gradient(
-		circle,
-		rgba(63, 94, 251, 1) 0%,
-		rgba(252, 70, 107, 1) 100%
-	);
+  height: 90px;
+  display: inherit;
+  justify-content: space-between;
+  padding: 0 10%;
+  align-items: center;
+  background: radial-gradient(
+                  circle,
+                  rgba(63, 94, 251, 1) 0%,
+                  rgba(252, 70, 107, 1) 100%
+  );
 }
 
 .welcome {
-	font-size: 20px;
+  font-size: 20px;
 }
+
 .welcome:hover {
-	color: $first-theme !important;
+  color: $first-theme !important;
 }
 
 .isAuth {
-	display: inherit;
+  display: inherit;
 }
 
 span {
-	font-size: 17px;
-	font-weight: 700;
-	color: white;
-	padding: 0 20px;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  padding: 0 20px;
 }
 
 span:hover {
-	color: $first-theme;
+  color: $first-theme;
 }
 
 .logout:hover {
-	color: rgb(150, 30, 30);
+  color: rgb(150, 30, 30);
 }
