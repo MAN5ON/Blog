@@ -144,7 +144,7 @@ export const NewPostItem = () => {
                     maximum number of content blocks is 20
                 </footer>
             )}
-            <article className={s.publish}>
+            <section className={s.publish}>
                 {post.postArr.length > 0 ? (
                     <TemplateButton text="PUBLISH" disabled={!isValid}/>
                 ) : (
@@ -152,7 +152,7 @@ export const NewPostItem = () => {
                         minimum number of content block is 1
                     </footer>
                 )}
-            </article>
+            </section>
         </main>
     );
 };

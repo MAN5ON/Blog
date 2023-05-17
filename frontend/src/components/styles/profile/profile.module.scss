@@ -73,6 +73,10 @@
   padding-bottom: 15px;
 }
 
+.shortTemp {
+  color: $second-theme;
+}
+
 .editPage textarea {
   width: 100%;
   height: 250px;
@@ -92,4 +96,21 @@
 
 .editPage button {
   margin: 15px auto;
+}
+
+.confirm {
+  text-align: center;
+  color: $first-theme;
+  background-color: $component-bg;
+  width: 35vw;
+  padding: 25px;
+  margin: 50px auto;
+  border-radius: 5px;
+}
+.confirm a {
+  color: $second-theme;
+  background-color: $window-bg;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-decoration: none;
 }

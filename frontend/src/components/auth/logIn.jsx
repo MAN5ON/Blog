@@ -11,15 +11,11 @@ export const LogIn = () => {
     const isAuth = useSelector(selectIsAuth);
     const dispatch = useDispatch();
     const {
-        register,
-        handleSubmit,
-        formState: {errors, isValid},
+        register, handleSubmit, formState: {errors, isValid},
     } = useForm({
         defaultValues: {
-            email: "test@test.ru",
-            password: "123456",
-        },
-        mode: "onChange",
+            email: "test@test.ru", password: "123456",
+        }, mode: "onChange",
     });
 
     const onSubmit = async (values) => {
@@ -31,52 +27,51 @@ export const LogIn = () => {
 
         if ("token" in data.payload) {
             window.localStorage.setItem("token", data.payload.token);
+            window.localStorage.setItem("userID", data.payload._id)
         }
     };
 
     if (isAuth) {
-        return <Navigate to="/posts"/>;
+        return <Navigate to="/"/>;
     }
 
-    return (
-        <main className={s.authPage}>
+    return (<main className={s.authPage}>
             <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-                <article className={s.inputs}>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        {...register("email", {
-                            required: "please enter your email",
-                            pattern: {
-                                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                message: "email validation error",
-                            },
-                        })}
-                    />
-                    <footer className={s.helpText}>
-                        {errors.email?.message}
-                    </footer>
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        {...register("password", {
-                            required: "please enter your password",
-                            minLength: {
-                                value: 5,
-                                message: "minimum password length is 5",
-                            },
-                            maxLength: {
-                                value: 25,
-                                message: "maximum password length is 25",
-                            },
-                        })}
-                    />
-                    <footer className={s.helpText}>
-                        {errors.password?.message}
-                    </footer>
-                </article>
+                <section className={s.inputs}>
+                    <section>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            {...register("email", {
+                                required: "please enter your email", pattern: {
+                                    value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                    message: "email validation error",
+                                },
+                            })}
+                        />
+                        <footer className={s.helpText}>
+                            {errors.email?.message}
+                        </footer>
+                    </section>
+                    <section>
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            {...register("password", {
+                                required: "please enter your password", minLength: {
+                                    value: 5, message: "minimum password length is 5",
+                                }, maxLength: {
+                                    value: 25, message: "maximum password length is 25",
+                                },
+                            })}
+                        />
+                        <footer className={s.helpText}>
+                            {errors.password?.message}
+                        </footer>
+                    </section>
+                </section>
 
-                <article className={s.buttons}>
+                <section className={s.buttons}>
                     <div className={s.mainButton}>
                         <TemplateButton
                             text="LOG IN"
@@ -87,8 +82,7 @@ export const LogIn = () => {
                     <Link to="/sign-up" className={s.secondButton}>
                         Sign up
                     </Link>
-                </article>
+                </section>
             </form>
-        </main>
-    );
+        </main>);
 };

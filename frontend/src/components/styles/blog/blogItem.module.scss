@@ -22,17 +22,23 @@
   justify-content: space-between;
   margin: 10px 0;
   font-size: 15px;
-  font-weight: lighter;
+  font-weight: lighter
 }
 
 .header {
   margin: 0 0 10px;
+  font-weight: 800;
+  font-size: xxx-large;
+}
+
+.header, .content {
+  font-family: $main-text;
 }
 
 .textItem {
   text-align: justify;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 .textItem::first-letter {

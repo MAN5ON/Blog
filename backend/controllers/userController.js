@@ -23,12 +23,10 @@ export const signup = async (req, res) => {
         const user = await doc.save();
 
         const token = jwt.sign({
-                _id: user._id,
-            }, 'flowers',
-            {
-                expiresIn: '30d',
-            }
-        )
+            _id: user._id,
+        }, 'flowers', {
+            expiresIn: '30d',
+        })
 
         const {passwordHash, ...userData} = user._doc
         res.json({...userData, token})
@@ -59,12 +57,10 @@ export const login = async (req, res) => {
         }
 
         const token = jwt.sign({
-                _id: user._id,
-            }, 'flowers',
-            {
-                expiresIn: '30d',
-            }
-        )
+            _id: user._id,
+        }, 'flowers', {
+            expiresIn: '30d',
+        })
 
         const {passwordHash, ...userData} = user._doc
         res.json({...userData, token})
@@ -78,9 +74,9 @@ export const login = async (req, res) => {
 
 }
 
-export const openProfile = async (req, res) => {
+export const getOtherProfile = async (req, res) => {
     try {
-        const user = await UserModel.findById(req.userID)
+        const user = await UserModel.findById(req.params.id)
         if (!user) {
             return res.status(404).json({
                 message: 'Пользователь не найден'
@@ -96,14 +92,30 @@ export const openProfile = async (req, res) => {
     }
 }
 
+export const checkUserAuth = async (req, res) => {
+    try {
+        const user = await UserModel.findById(req.userID)
+        if (!user) {
+            return res.status(404).json({
+                message: 'Ваш аккаунт не найден'
+            })
+        }
+        const {passwordHash, ...userData} = user._doc
+        res.json({...userData})
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            message: 'Ошибка проверки авторизации'
+        })
+    }
+}
 export const updateProfile = async (req, res) => {
     try {
-        const userID = req.params.id
+        const userID = req.userID
         await UserModel.updateOne({
             _id: userID
         }, {
-            avatarURL: req.body.avatarURL,
-            userInfo: req.body.userInfo
+            avatarURL: req.body.avatarURL, userInfo: req.body.userInfo
         })
         res.json({
             success: true
@@ -118,7 +130,7 @@ export const updateProfile = async (req, res) => {
 
 export const deleteProfile = async (req, res) => {
     try {
-        const itemID = req.params.id
+        const itemID = req.userID
         UserModel.findByIdAndDelete({
             _id: itemID,
         }, (error, doc) => {

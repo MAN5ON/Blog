@@ -45,6 +45,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 5px 0 0 5px;
 }
 
 .blogPic {
@@ -87,6 +88,10 @@
   display: flex;
   text-align: center;
   justify-content: space-between;
+}
+
+.statistic p {
+  color: rgba($blog-text-color, 0.7);
 }
 
 .textPost {

@@ -8,7 +8,7 @@ export const Info = () => {
             <br/> Я, как её создатель, приветствую вас!
             <br/> Для перехода на страницу блога кликните по `
             <Link
-                to={"/posts"}
+                to={"/"}
                 style={{textDecoration: "underline", color: "lime"}}
             >
                 Welcome

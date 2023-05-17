@@ -28,7 +28,7 @@ export const Blog = () => {
                         <BlogShield
                             key={index}
                             id={obj._id}
-                            author={obj.author.login}
+                            author={obj.author}
                             title={obj.title}
                             introText={obj.introText}
                             introIMG={obj.introIMG}

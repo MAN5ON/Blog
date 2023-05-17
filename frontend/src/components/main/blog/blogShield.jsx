@@ -15,10 +15,10 @@ export const BlogShield = ({
                            }) => {
     return (
         <article className={s.blogShield}>
-            <Link to={`/posts/${id}`} className={s.picContain}>
+            <Link to={`/${id}`} className={s.picContain}>
                 <img className={s.blogPic} src={introIMG} alt=""/>
             </Link>
-            <article className={s.info}>
+            <section className={s.info}>
                 <header className={s.headerPost}>
                     <p className={s.datePost}>{creationDate}</p>
                     <header className={s.statistic}>
@@ -26,16 +26,16 @@ export const BlogShield = ({
                         <p> {likes} likes</p>
                     </header>
                 </header>
-                <article className={s.textPost}>
-                    <Link to={`/posts/${id}`} className={s.headPost}>
+                <section className={s.textPost}>
+                    <Link to={`/${id}`} className={s.headPost}>
                         {title.toUpperCase()}
                     </Link>
                     <p className={s.descriptionPost}>{introText}</p>
-                </article>
-                <Link to={`/porfile`} className={s.authorPost}>
-                    by {author.toUpperCase()}
+                </section>
+                <Link to={`/profile/${author._id}`} className={s.authorPost}>
+                    by {author.login.toUpperCase()}
                 </Link>
-            </article>
+            </section>
         </article>
     );
 };

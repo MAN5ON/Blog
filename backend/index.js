@@ -7,7 +7,7 @@ import checkAuth from "./utils/checkAuth.js";
 import {PostValidation, loginValidation, registerValidation, profileInfoValidation} from "./validations.js";
 
 import {updatePost, deletePost, getAllPosts, getOnePost, newPost} from "./controllers/postController.js";
-import {deleteProfile, login, openProfile, signup, updateProfile} from "./controllers/userController.js";
+import {login, signup, getOtherProfile, checkUserAuth, updateProfile, deleteProfile } from "./controllers/userController.js";
 import {handleValidationsErrors} from "./utils/handleValidationsErrors.js";
 
 
@@ -33,10 +33,10 @@ app.use(cors())
 app.use('/uploads', express.static('uploads'))
 
 //get req-res
-app.get('/profile/:id', checkAuth, openProfile)
-app.get('/posts/:id', getOnePost)
-app.get('/posts', getAllPosts)
-app.get('/me', checkAuth, openProfile)
+app.get('/profile/:id', checkAuth, getOtherProfile);
+app.get('/me', checkAuth, checkUserAuth)
+app.get('/:id', getOnePost);
+app.get('/', getAllPosts);
 
 //post req-res
 app.post('/sign-up', registerValidation, handleValidationsErrors, signup)
@@ -51,11 +51,11 @@ app.post('/uploads', checkAuth, upload.single('image'), (req, res) => {
 
 //patch req-res
 app.patch('/profile/:id', checkAuth, profileInfoValidation, handleValidationsErrors, updateProfile)
-app.patch('/posts/:id', checkAuth, PostValidation, handleValidationsErrors, updatePost)
+app.patch('/:id', checkAuth, PostValidation, handleValidationsErrors, updatePost)
 
 //delete req-res
 app.delete('/profile/:id', checkAuth, deleteProfile)
-app.delete('/posts/:id', checkAuth, deletePost)
+app.delete('/:id', checkAuth, deletePost)
 
 
 app.listen(3666, (error) => {
