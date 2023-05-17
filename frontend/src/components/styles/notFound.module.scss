@@ -1,0 +1,36 @@
+@import "./index.scss";
+
+.lostPage {
+  display: flex;
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translate(-50%,0);
+  flex-direction: column;
+  align-items: center;
+  color:$first-theme;
+}
+
+.lostPage img {
+  max-height: 50vh;
+  max-width: 50vh;
+  background-color: $component-bg;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.lostPage p, .lostPage h1 {
+  background-color: $component-bg;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.lostPage p {
+  color: $second-theme;
+
+}
+
+.lostPage a {
+  text-decoration: underline;
+  color: $first-theme;
+}

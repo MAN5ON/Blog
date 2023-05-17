@@ -82,3 +82,7 @@
 .secondButton:hover {
   color: $second-theme;
 }
+
+.mainButton:disabled {
+  background-color: #6e0000;
+}

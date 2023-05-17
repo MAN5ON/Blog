@@ -6,8 +6,8 @@ export const fetchLogin = createAsyncThunk('auth/fetchLogin', async (params) => 
     return data
 })
 
-export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async () => {
-    const {data} = await axios.get('/me')
+export const fetchCheckAuth = createAsyncThunk('auth/fetchCheckAuth', async (params) => {
+    const {data} = await axios.get('/me', params)
     return data
 })
 
@@ -17,50 +17,38 @@ export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (param
 })
 
 const authSlice = createSlice({
-    name: 'auth',
-    initialState: {
-        data: null,
-        status: 'loading',
-    },
-    reducers: {
+    name: 'auth', initialState: {
+        data: null, status: 'loading',
+    }, reducers: {
         logout: (state) => {
             state.data = null
-        }
-    },
-    extraReducers: {
+        },
+    }, extraReducers: {
         [fetchLogin.pending]: (state) => {
             state.data = null
             state.status = 'loading'
-        },
-        [fetchLogin.fulfilled]: (state, action) => {
+        }, [fetchLogin.fulfilled]: (state, action) => {
             state.data = action.payload
             state.status = 'loaded'
-        },
-        [fetchLogin.rejected]: (state) => {
+        }, [fetchLogin.rejected]: (state) => {
             state.data = null
             state.status = 'error'
-        },
-        [fetchAuthMe.pending]: (state) => {
+        }, [fetchCheckAuth.pending]: (state) => {
             state.data = null
             state.status = 'loading'
-        },
-        [fetchAuthMe.fulfilled]: (state, action) => {
+        }, [fetchCheckAuth.fulfilled]: (state, action) => {
             state.data = action.payload
             state.status = 'loaded'
-        },
-        [fetchAuthMe.rejected]: (state) => {
+        }, [fetchCheckAuth.rejected]: (state) => {
             state.data = null
             state.status = 'error'
-        },
-        [fetchRegister.pending]: (state) => {
+        }, [fetchRegister.pending]: (state) => {
             state.data = null
             state.status = 'loading'
-        },
-        [fetchRegister.fulfilled]: (state, action) => {
+        }, [fetchRegister.fulfilled]: (state, action) => {
             state.data = action.payload
             state.status = 'loaded'
-        },
-        [fetchRegister.rejected]: (state) => {
+        }, [fetchRegister.rejected]: (state) => {
             state.data = null
             state.status = 'error'
         },
@@ -69,8 +57,8 @@ const authSlice = createSlice({
     }
 })
 
-export const selectIsAuth = state => Boolean(state.auth.data)
+export const selectIsAuth = state => state.auth.data
 
 const {actions, reducer} = authSlice
-export const {logout} = actions;
+export const {logout, addDataIfAuth} = actions;
 export const authReducer = reducer;
